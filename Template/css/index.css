@@ -1,0 +1,79 @@
+body {
+    font-family: 'Roboto', sans-serif;
+}
+.img {
+    background-repeat: no-repeat;
+    background-image: url('../images/journ.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 200px;
+    
+    
+    
+}
+#menu{
+	text-align: center;
+    font-weight: bold;
+    
+    
+}
+.menuitem{
+	padding: 10px;
+	cursor: pointer;
+    text-decoration: none;
+    color: rgb(38, 126, 0);
+    
+    
+    
+}
+.menuitem:hover{
+	background-color: transparent;
+    color: grey;
+    
+}
+
+  h2 {
+    color: black;
+    margin: 0;
+    text-align: left;
+  }
+  
+  
+  
+  p {
+    color: grey;
+    margin: 0;
+    text-align: left;
+  }
+  
+  .entry {
+    margin: 60px auto;
+    padding: 10px 0px 0px 0px;
+    width: 90%;
+  }
+  
+  .entry-img {
+    display: inline-block;
+    margin-top: 20px;
+  }
+  .index:link{
+      text-decoration: none;
+  }
+  .index{
+	color: black;
+    font-family: 'Roboto', sans-serif;
+  }
+  .entry-description {
+    display: inline-block;
+    width: 70%;
+  }
+
+  ul {
+    list-style: none;
+   }
+   footer {
+    background-color: #F1F1F1;
+    text-align: center;
+    padding: 10px;
+    text-align: center;
+}
