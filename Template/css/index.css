@@ -1,15 +1,14 @@
 body {
     font-family: 'Roboto', sans-serif;
+    
 }
 .img {
     background-repeat: no-repeat;
     background-image: url('../images/journ.jpg');
     background-size: cover;
     background-position: center;
-    height: 200px;
-    
-    
-    
+    height: 100px;
+    display: block;
 }
 #menu{
 	text-align: center;
@@ -30,6 +29,12 @@ body {
 	background-color: transparent;
     color: grey;
     
+}
+header {
+    
+  padding: 30px;
+  text-align: center;
+  
 }
 
   h2 {
