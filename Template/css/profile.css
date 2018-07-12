@@ -1,0 +1,196 @@
+body {
+    font-family: 'Roboto', sans-serif;
+     
+}
+
+
+#menu{
+	text-align: center;
+    font-weight: bold;
+    
+    
+}
+.menuitem{
+	padding: 10px;
+	cursor: pointer;
+    text-decoration: none;
+    color: rgb(38, 126, 0);
+    
+    
+    
+}
+.menuitem:hover{
+	background-color: transparent;
+    color: grey;
+    
+}
+* {
+    box-sizing: border-box;
+}
+
+
+
+/* Create two columns/boxes that floats next to each other */
+.part {
+  float: left;
+  width: 15%;
+  color: grey;
+  padding: 20px;
+  margin: 10px;
+}
+
+
+article {
+  float: left;
+  padding: 20px;
+  width: 80%;
+  background:  #f1f1f1;
+  margin:20px;
+}
+
+/* Clear floats after the columns */
+section:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+/* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
+@media (max-width: 600px) {
+  .part, article {
+      width: 100%;
+      height: auto;
+  }
+}
+
+
+/* Style the header */
+header {
+    
+    padding: 30px;
+    text-align: center;
+    
+}
+
+footer{
+    background-color: #F1F1F1;
+    text-align: center;
+    padding: 10px;
+    text-align: center;
+}
+[class*="entypo-"]:before {
+    font-family: 'entypo', sans-serif;
+  }
+  
+ 
+  
+  .user-profile {
+    margin: auto;
+    width: 25em; 
+    height: 11em;
+    background: #fff;
+    border-radius: .3em;
+  }
+  
+  .user-profile  .username {
+    margin: auto;
+    margin-top: -4.40em;
+    margin-left: 5.80em;
+    color: gray;
+    font-size: 1.53em;
+    font-family: "Coda", sans-serif;
+    font-weight: bold;
+  }
+  .user-profile  .bio {
+    margin: auto;
+    display: inline-block;
+    margin-left: 10.43em;
+    color: gray; 
+    font-size: .87em;
+    font-family: "varela round", sans-serif;
+  }
+  .user-profile > .description {
+    margin: auto;
+    margin-top: 1.35em;
+    margin-right: 4.43em;
+    width: 14em;
+    color: #c0c5c5; 
+    font-size: .87em;
+    font-family: "varela round", sans-serif;
+  }
+  .user-profile > img.avatar {
+    padding: .7em;
+    margin-left: .3em;
+    margin-top: .3em;
+    height: 6.23em;
+    width: 6.23em;
+    border-radius: 18em;
+  }
+  
+  .user-profile ul.data {
+    margin: 2em auto;
+    height: 3.70em;
+    background: rgb(38, 126, 0);
+    text-align: center;
+    border-radius: 0 0 .3em .3em;
+  }
+  .user-profile li {
+    margin: 0 auto;
+    color: #e3eeee;
+    padding: 1.30em; 
+    width: 50%;
+    display: table-cell;
+    text-align: center;
+  }
+  
+  .user-profile span {
+    font-family: "varela round", sans-serif;
+    color: #e3eeee;
+    white-space: nowrap;
+    font-size: 1.27em;
+    font-weight: bold;
+  }
+  .user-profile span:hover {
+    color: #daebea;
+  }
+  h2 {
+    color: black;
+    margin: 0;
+    text-align: left;
+  }
+  
+  
+  
+ p {
+    color: grey;
+    margin: 0;
+    text-align: left;
+ }
+  
+  .entry {
+    margin: 60px auto;
+    padding: 10px 0px 0px 0px;
+    width: 90%;
+  }
+  
+  .entry-img {
+    display: inline-block;
+    margin-top: 20px;
+  }
+  .index:link{
+      text-decoration: none;
+  }
+  .index{
+	color: black;
+    font-family: 'Roboto', sans-serif;
+  }
+  .entry-description {
+    display: inline-block;
+    width: 70%;
+  }
+
+  ul {
+    list-style: none;
+   }
+  
