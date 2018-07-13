@@ -131,12 +131,30 @@ section:after {
     text-align: center;
 }
 
-::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+::-webkit-input-placeholder {/* Chrome/Opera/Safari */
     color: gray;
     font-family: 'Roboto', sans-serif;
     font-weight: bold;
     font-size: 20px;
 }
+::-moz-placeholder{/* Firefox 19+ */
+    color: gray;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+}
+:-ms-input-placeholder { /* IE 10+ */
+    color: gray;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+  }
+:-moz-placeholder { /* Firefox 18- */
+    color: gray;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+  }
 .image-upload > input
 {
     display: none;
