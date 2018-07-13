@@ -7,4 +7,5 @@ export default (app) => {
   });
 
   app.post('/api/v1/entries', entryController.addEntry);
+  app.put('/api/v1/entries/:entryId', entryController.modifyEntry);
 };
