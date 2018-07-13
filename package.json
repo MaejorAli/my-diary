@@ -1,0 +1,23 @@
+{
+  "name": "my-diary",
+  "version": "1.0.0",
+  "description": "an online journal where users can pen down their thoughts",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MaejorAli/my-diary.git"
+  },
+  "keywords": [
+    "node",
+    "javascript"
+  ],
+  "author": "Ali Shaibu Salami",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MaejorAli/my-diary/issues"
+  },
+  "homepage": "https://github.com/MaejorAli/my-diary#readme"
+}
