@@ -40,6 +40,19 @@ class Entry {
       res.status(404).send({ message: 'Entry not found', error: true });
     }
   }
+
+  static getAllEntries(req, res) {
+    return res.status(200).send({ error: false, entries: db });
+  }
+
+  static getAnEntry(req, res) {
+    for (let i = 0; i < db.length; i += 1) {
+      if (db[i].id === parseFloat(req.params.entryId)) {
+        return res.status(200).send({ entry: db[i], message: 'success', error: false });
+      }
+    }
+    return res.status(404).send({ message: 'Entry not found!', error: true });
+  }
 }
 
 
