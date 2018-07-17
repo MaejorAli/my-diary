@@ -1,5 +1,5 @@
 ### status
-[![Build Status](https://travis-ci.org/MaejorAli/my-diary.svg?branch=develop)](https://travis-ci.org/MaejorAli/my-diary)
+[![Build Status](https://travis-ci.org/MaejorAli/my-diary.svg?branch=develop)](https://travis-ci.org/MaejorAli/my-diary) [![Coverage Status](https://coveralls.io/repos/github/MaejorAli/my-diary/badge.svg?branch=develop)](https://coveralls.io/github/MaejorAli/my-diary?branch=develop)
 # my-diary
 
 MyDiary is an online journal where users can pen down their thoughts and feelings.
