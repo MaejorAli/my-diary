@@ -19,3 +19,6 @@ run npm run start:dev to get the app running
 ## Author
 
 Ali Shaibu Salami
+
+## Heroku
+This is hosted [here](https://secure-shelf-65268.herokuapp.com/) on Heroku
