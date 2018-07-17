@@ -160,6 +160,23 @@ describe('PUT /api/v1/entries/<entryId>', () => {
         expect(message).to.equal('Successfully Modified');
       });
   });
+  it('responds with the right response when it a particular entry to be updated is not found', (done) => {
+    const entry = {
+      title: 'Enough is enough!',
+      story: 'It has been almost a century... ',
+
+    };
+    request(app)
+      .put('/api/v1/entries/8')
+      .send(entry)
+      .set('Accept', 'application/json')
+      .expect('Content-Type', /json/)
+      .expect(404, done)
+      .expect((res) => {
+        const { message } = res.body;
+        expect(message).to.equal('Entry not found');
+      });
+  });
 });
 describe('GET /api/v1/entries/entryId', () => {
   it('returns with the right response when getting an entry', (done) => {
@@ -171,6 +188,17 @@ describe('GET /api/v1/entries/entryId', () => {
       .expect((res) => {
         const { message } = res.body;
         expect(message).to.equal('success');
+      });
+  });
+  it('returns with the right response when entry to be gotten is not found', (done) => {
+    request(app)
+      .get('/api/v1/entries/10')
+      .set('Accept', 'application/json')
+      .expect('Content-Type', /json/)
+      .expect(404, done)
+      .expect((res) => {
+        const { message } = res.body;
+        expect(message).to.equal('Entry not found!');
       });
   });
 });
@@ -208,6 +236,7 @@ describe('PUT /api/v1/recipes/<entryId>', () => {
           expect(error).to.equal('A field does not contain any input');
         });
     });
+
     it('responds with the right reponse when some request body field contains only digits', (done) => {
       const entry = {
         title: 'Enough is enough!',
