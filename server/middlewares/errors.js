@@ -12,9 +12,9 @@ const checkNullInput = (req, res, next) => {
   let isString = true;
   const {
     title,
-    story,
+    content,
   } = req.body;
-  [title, story].forEach((info) => {
+  [title, content].forEach((info) => {
     if (info === undefined) {
       isUndefined = true;
     }
@@ -45,13 +45,13 @@ const checkNullInput = (req, res, next) => {
 const checkInvalidModification = (req, res, next) => {
   const {
     title,
-    story,
+    content,
   } = req.body;
   const modifiedFields = [];
   let isUndefined = false;
   let isNull = false;
   let isString = true;
-  [title, story].forEach((field) => {
+  [title, content].forEach((field) => {
     if (field !== undefined) {
       modifiedFields.push(field);
     }
