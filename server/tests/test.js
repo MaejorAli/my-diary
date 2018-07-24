@@ -29,7 +29,7 @@ describe('test-cases for api routes', () => {
     it('responds with the right reponse when an entry is created', (done) => {
       const entry = {
         title: 'Enough is enough!',
-        story: 'It has been almost a century... ',
+        content: 'It has been almost a century... ',
 
       };
       request(app)
@@ -66,7 +66,7 @@ describe('test-cases for api routes', () => {
       it('responds with the right reponse when some request body field is null', (done) => {
         const entry = {
           title: 'Enough is enough!',
-          story: '',
+          content: '',
         };
         request(app)
           .post('/api/v1/entries')
@@ -82,7 +82,7 @@ describe('test-cases for api routes', () => {
       it('responds with the right reponse when some request body field contains only whitespaces', (done) => {
         const entry = {
           title: 'Enough is enough!',
-          story: '  ',
+          content: '  ',
         };
         request(app)
           .post('/api/v1/entries')
@@ -98,7 +98,7 @@ describe('test-cases for api routes', () => {
       it('responds with the right reponse when some request body field contains only digits', (done) => {
         const entry = {
           title: 'Enough is enough!',
-          story: '6687',
+          content: '6687',
         };
         request(app)
           .post('/api/v1/entries')
@@ -114,7 +114,7 @@ describe('test-cases for api routes', () => {
       it('responds with the right reponse when some request body field is alphanumeric', (done) => {
         const entry = {
           title: 'Enough is enough!',
-          story: '6687fstaff of',
+          content: '6687fstaff of',
         };
         request(app)
           .post('/api/v1/entries')
@@ -146,7 +146,7 @@ describe('PUT /api/v1/entries/<entryId>', () => {
   it('responds with the right response when it updates a particular entry', (done) => {
     const entry = {
       title: 'Enough is enough!',
-      story: 'It has been almost a century... ',
+      content: 'It has been almost a century... ',
 
     };
     request(app)
@@ -163,7 +163,7 @@ describe('PUT /api/v1/entries/<entryId>', () => {
   it('responds with the right response when it a particular entry to be updated is not found', (done) => {
     const entry = {
       title: 'Enough is enough!',
-      story: 'It has been almost a century... ',
+      content: 'It has been almost a century... ',
 
     };
     request(app)
@@ -207,7 +207,7 @@ describe('PUT /api/v1/recipes/<entryId>', () => {
     it('responds with the right reponse when some request body field is null', (done) => {
       const entry = {
         title: 'Enough is enough!',
-        story: '',
+        content: '',
       };
       request(app)
         .put('/api/v1/entries/1')
@@ -223,7 +223,7 @@ describe('PUT /api/v1/recipes/<entryId>', () => {
     it('responds with the right reponse when some request body field contains only whitespaces', (done) => {
       const entry = {
         title: 'Enough is enough!',
-        story: '  ',
+        content: '  ',
       };
       request(app)
         .put('/api/v1/entries/1')
@@ -240,7 +240,7 @@ describe('PUT /api/v1/recipes/<entryId>', () => {
     it('responds with the right reponse when some request body field contains only digits', (done) => {
       const entry = {
         title: 'Enough is enough!',
-        story: '67889',
+        content: '67889',
       };
       request(app)
         .put('/api/v1/entries/1')

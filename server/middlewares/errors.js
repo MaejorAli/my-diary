@@ -1,6 +1,6 @@
-const alphaNumeric = (inputtxt) => {
+const alphaNumeric = (inputTxt) => {
   const letterNumber = /((^[0-9]+[a-z]+)|(^[a-z]+[0-9]+))+[0-9a-z]+$/i;
-  if (inputtxt.match(letterNumber)) {
+  if (inputTxt.match(letterNumber)) {
     return true;
   }
   return false;
