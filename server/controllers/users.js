@@ -62,5 +62,45 @@ const signup = (req, res) => {
   });
 };
 
+const signin = (req, res) => {
+  const currentDate = `${new Date()}`;
+  const user = {
+    email: req.body.email,
+    pasword: req.body.password,
+    createdAt: currentDate.slice(0, 24),
+    updatedAt: currentDate.slice(0, 24)
+  };
+  pg.connect(connectionString, (err, client, done) => {
+    // Handle connection errors
+    if (err) {
+      done();
+      return res.status(500).send({ success: false, error: err.message });
+    }
+    const query = {
+      name: 'fetch-user',
+      text: 'SELECT * FROM user WHERE id = $1',
+      values: [user.email]
+    };
+    client.query(query, (err, res) => {
+      if (err) {
+        return res.status(500).send({ error: err.message });
+      }
+      console.log(res, 'hgrdrrdrd');
+      bcrypt.compare(user.password, res.rows[0].password, (err, res) => {
+        if (err) {
+          return res.status(400).send({ error: 'Invalid email or password' });
+        }
+        const payload = {
+          userId: user.id,
+        };
+        const token = jwt.sign(payload, secret, {
+          expiresIn: '100h', // expires in 1 hours
+        });
+        return res.status(200).send({ message: 'You have successfully signed in', token });
+      });
+    });
+  });
+};
 
-export default { signup };
+
+export default { signup, signin };
