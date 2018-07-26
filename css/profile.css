@@ -70,7 +70,7 @@ header {
     
     padding: 30px;
     text-align: center;
-    
+    background-color: aquamarine;
 }
 
 footer{
@@ -129,8 +129,8 @@ footer{
   }
   
   .user-profile ul.data {
-    margin: 2em auto;
-    height: 3.70em;
+    margin: 3em auto;
+    height: 2.70em;
     background: rgb(38, 126, 0);
     text-align: center;
     border-radius: 0 0 .3em .3em;
@@ -138,8 +138,8 @@ footer{
   .user-profile li {
     margin: 0 auto;
     color: #e3eeee;
-    padding: 1.30em; 
-    width: 50%;
+    padding: 0.30em; 
+    width: 30%;
     display: table-cell;
     text-align: center;
   }

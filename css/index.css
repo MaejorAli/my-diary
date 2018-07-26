@@ -1,6 +1,7 @@
 body {
     font-family: 'Roboto', sans-serif;
     
+    
 }
 .img {
     background-repeat: no-repeat;
@@ -13,11 +14,12 @@ body {
 #menu{
 	text-align: center;
     font-weight: bold;
+    background-color: aquamarine;
     
     
 }
 .menuitem{
-	padding: 10px;
+	padding: 5px;
 	cursor: pointer;
     text-decoration: none;
     color: rgb(38, 126, 0);
@@ -34,13 +36,14 @@ header {
     
   padding: 30px;
   text-align: center;
-  
+  background-color: aquamarine;
 }
 
   h2 {
     color: black;
     margin: 0;
     text-align: left;
+    float: justify;
   }
   
   
@@ -49,17 +52,18 @@ header {
     color: grey;
     margin: 0;
     text-align: left;
+    float: justify;
   }
   
   .entry {
-    margin: 60px auto;
-    padding: 10px 0px 0px 0px;
-    width: 90%;
+    margin: 30px auto;
+    padding: 5px 0px 0px 0px;
+    width:80%;
   }
   
   .entry-img {
     display: inline-block;
-    margin-top: 20px;
+    margin-top: 10px;
   }
   .index:link{
       text-decoration: none;
