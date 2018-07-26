@@ -43,7 +43,6 @@ header {
     color: black;
     margin: 0;
     text-align: left;
-    float: justify;
   }
   
   
@@ -52,13 +51,12 @@ header {
     color: grey;
     margin: 0;
     text-align: left;
-    float: justify;
   }
   
   .entry {
     margin: 30px auto;
     padding: 5px 0px 0px 0px;
-    width:80%;
+    width:0%;
   }
   
   .entry-img {
