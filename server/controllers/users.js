@@ -33,9 +33,17 @@ const signup = (req, res) => {
         return res.status(500).send({ success: false, error: err.message });
       }
 
-      client.query(
+      const query = client.query(
         'INSERT INTO Users(firstname, lastname, password, email, createdAt, updatedAt) values($1, $2, $3, $4, $5, $6)',
         [user.firstname, user.lastname, password, user.email, user.createdAt, user.updatedAt]
+        , (err) => {
+          if (err) {
+            if (err.code === '23505') {
+              return res.status(406).send({ error: 'Another User with this email already exists' });
+            }
+            return res.status(400).send({ error: err.message });
+          }
+        }
       );
       const payload = {
         userId: user.id,
@@ -43,8 +51,10 @@ const signup = (req, res) => {
       const token = jwt.sign(payload, secret, {
         expiresIn: '100h', // expires in 1 hours
       });
-      done();
-      res.status(200).send({ message: 'You have successfully signed up', token, user });
+      query.on('end', () => {
+        res.status(200).send({ message: 'You have successfully signed up', token });
+        done();
+      });
     });
     if (err) {
       return res.status(500).send({ error: err.message });
@@ -52,8 +62,5 @@ const signup = (req, res) => {
   });
 };
 
-const signin = (req, res) => {
 
-};
-
-export default { signup, signin };
+export default { signup };
