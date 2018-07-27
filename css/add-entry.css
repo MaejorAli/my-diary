@@ -160,8 +160,9 @@ section:after {
     display: none;
 }
 .img{
-    float: right;
+    float: left;
     opacity: 0.5;
+    
 }
 
 
