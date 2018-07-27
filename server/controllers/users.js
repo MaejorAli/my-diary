@@ -85,7 +85,7 @@ const signin = (req, res) => {
       if (err) {
         return res.status(500).send({ error: err.message });
       }
-      console.log(res, 'hgrdrrdrd');
+
       bcrypt.compare(user.password, res.rows[0].password, (err, res) => {
         if (err) {
           return res.status(400).send({ error: 'Invalid email or password' });
