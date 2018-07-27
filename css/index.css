@@ -13,16 +13,13 @@ body {
 }
 #menu{
 	text-align: center;
-    font-weight: bold;
-    background-color: aquamarine;
-    
-    
+    font-weight: bold;    
 }
 .menuitem{
 	padding: 5px;
 	cursor: pointer;
     text-decoration: none;
-    color: rgb(38, 126, 0);
+    color: white;
     
     
     
@@ -36,7 +33,7 @@ header {
     
   padding: 30px;
   text-align: center;
-  background-color: aquamarine;
+  background-color: rgb(38, 126, 0);
 }
 
   h2 {

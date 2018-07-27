@@ -16,7 +16,7 @@ body {
 	padding: 10px;
 	cursor: pointer;
     text-decoration: none;
-    color: rgb(38, 126, 0);
+    color: white;
     
     
     
@@ -36,7 +36,7 @@ header {
     
     padding: 30px;
     text-align: center;
-    background-color: aquamarine;
+    background-color: rgb(38, 126, 0);
 }
 p{
     text-align: left;
