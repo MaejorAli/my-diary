@@ -1,0 +1,29 @@
+body, html {
+    height: 100%;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-image: url('../images/journ.jpg');
+	background-size: cover;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 15px;
+    color: rgb(38, 126, 0);
+    background-attachment: fixed;
+    background-position: center; 
+    
+}
+h1 {
+    text-shadow: 1px 1px 2px black, 0 0 25px whitesmoke, 0 0 10px white;
+    text-align: center;
+}
+div {
+    height: 200px;
+    width: 400px;
+    background: transparent;
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -100px;
+    margin-left: -200px;
+}
