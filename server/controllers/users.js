@@ -63,43 +63,42 @@ const signup = (req, res) => {
 };
 
 const signin = (req, res) => {
-  const currentDate = `${new Date()}`;
   const user = {
     email: req.body.email,
-    pasword: req.body.password,
-    createdAt: currentDate.slice(0, 24),
-    updatedAt: currentDate.slice(0, 24)
+    password: req.body.password,
   };
-  pg.connect(connectionString, (err, client, done) => {
-    // Handle connection errors
-    if (err) {
-      done();
-      return res.status(500).send({ success: false, error: err.message });
-    }
-    const query = {
-      name: 'fetch-user',
-      text: 'SELECT * FROM user WHERE id = $1',
-      values: [user.email]
-    };
-    client.query(query, (err, res) => {
+  pg.connect(
+    connectionString,
+    (err, client, done) => {
+      // Handle connection errors
       if (err) {
-        return res.status(500).send({ error: err.message });
+        done();
+        return res.status(500).send({ success: false, error: err.message });
       }
-
-      bcrypt.compare(user.password, res.rows[0].password, (err, res) => {
-        if (err) {
-          return res.status(400).send({ error: 'Invalid email or password' });
-        }
-        const payload = {
-          userId: user.id,
-        };
-        const token = jwt.sign(payload, secret, {
-          expiresIn: '100h', // expires in 1 hours
-        });
-        return res.status(200).send({ message: 'You have successfully signed in', token });
-      });
-    });
-  });
+      client.query(
+        'SELECT * FROM Users WHERE email= $1',
+        [user.email],
+        (error, result) => {
+          if (err) {
+            return res.status(500).send({ error: error.message });
+          }
+          const data = result.rows[0];
+          bcrypt.compare(user.password, data.password, (compareError) => {
+            if (compareError) {
+              return res.status(400).send({ error: 'Invalid email or password' });
+            }
+            const payload = {
+              userId: user.id,
+            };
+            const token = jwt.sign(payload, secret, {
+              expiresIn: '100h', // expires in 1 hours
+            });
+            return res.status(200).send({ message: 'You have successfully signed in', token });
+          });
+        },
+      );
+    },
+  );
 };
 
 
