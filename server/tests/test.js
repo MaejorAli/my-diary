@@ -202,7 +202,7 @@ describe('GET /api/v1/entries/entryId', () => {
       });
   });
 });
-describe('PUT /api/v1/recipes/<entryId>', () => {
+describe('PUT /api/v1/entries/<entryId>', () => {
   describe('errors are properly handled when a request is made to modify an entry', () => {
     it('responds with the right reponse when some request body field is null', (done) => {
       const entry = {
