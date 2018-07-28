@@ -1,8 +1,7 @@
 body {
     font-family: 'Roboto', sans-serif;
     text-align: center;
-    
-    
+    background:#f1f1f1;
 }
 
 
@@ -38,17 +37,63 @@ header {
     text-align: center;
     background-color: rgb(38, 126, 0);
 }
-p{
-    text-align: left;
-    text-indent: 50px;
+textarea{
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    width: 100%;
+    height: 700px;
+    display: block;
+    margin-bottom: 10px;
+    z-index: 1;
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border-radius: 5px;
+    resize: none;
+    border: none;
+    outline: none;
 }
-
-h5 {
-    color:grey;
+#textareaMsg{
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    width: 100%;
+    height: 50px;
+    display: block;
+    margin-bottom: 10px;
+    z-index: 1;
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: none;
+    outline: none;
 }
+button {
+    text-align: center;
+    padding: 15px 25px;
+    font-size: 16px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    background-color: rgb(38, 126, 0);;
+    border: none;
+    border-radius: 15px;
+ }
+ 
+ button:hover {background-color: #3e8e41}
+ 
+ button:active {
+   background-color: #3e8e41;
+   box-shadow: 0 3px #666;
+   transform: translateY(4px);
+ }
 
 /* Create two columns/boxes that floats next to each other */
-h6 {
+.image-upload {
     float: left;
     width: 25%;
     color: grey;
@@ -59,9 +104,7 @@ h6 {
 article {
     float: left;
     padding: 20px;
-    width: 50%;
-    background:  #f1f1f1;
-    
+    width: 50%;   
 }
 
 /* Clear floats after the columns */
@@ -74,31 +117,11 @@ section:after {
 
 /* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
 @media (max-width: 600px) {
-    h6, article {
+   .image-upload, article {
         width: 100%;
         height: auto;
     }
 }
-button {
-    text-align: center;
-    padding: 8px 10px;
-    font-size: 16px;
-    text-align: center;
-    cursor: pointer;
-    outline: none;
-    color: #fff;
-    background-color: rgb(38, 126, 0);;
-    border: none;
-    border-radius: 15px;
-  }
-  
-  button:hover {background-color: #3e8e41}
-  
-  button:active {
-   background-color: #3e8e41;
-   box-shadow: 0 3px #666;
-   transform: translateY(4px);
-  }
 
 
  footer{
@@ -106,4 +129,38 @@ button {
     text-align: center;
     padding: 10px;
     text-align: center;
+}
+
+::-webkit-input-placeholder {/* Chrome/Opera/Safari */
+    color: gray;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+}
+::-moz-placeholder{/* Firefox 19+ */
+    color: gray;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+}
+:-ms-input-placeholder { /* IE 10+ */
+    color: gray;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+  }
+:-moz-placeholder { /* Firefox 18- */
+    color: gray;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+  }
+.image-upload > input
+{
+    display: none;
+}
+.img{
+    float: left;
+    opacity: 0.5;
+    
 }
