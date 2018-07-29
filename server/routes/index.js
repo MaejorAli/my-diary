@@ -10,4 +10,5 @@ export default (app) => {
 
   app.post('/api/v1/entries', auth, errorHandler.checkNullInput, entryController.addEntry);
   app.put('/api/v1/entries/:entryId', errorHandler.checkInvalidModification, entryController.modifyEntry);
+  app.get('/api/v1/entries', entryController.getAllEntries);
 };

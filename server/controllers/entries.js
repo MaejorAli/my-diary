@@ -66,8 +66,29 @@ const modifyEntry = (req, res) => {
   });
 };
 
+const getAllEntries = (req, res) => {
+  pg.connect(connectionString, (err, client, done) => {
+    // Handle connection errors
+    if (err) {
+      done();
+      return res.status(500).json({ success: false, data: err });
+    }
+
+    client.query(
+      'SELECT * FROM Entries ORDER BY id ASC;',
+      (err, result) => {
+        if (err) {
+          return res.status(500).send({ error: err.message });
+        }
+        const data = result.rows;
+        return res.status(200).send({ success: true, message: 'Entries successfully gotten!', data });
+      }
+    );
+  });
+};
 
 export default {
   addEntry,
-  modifyEntry
+  modifyEntry,
+  getAllEntries
 };
