@@ -1,5 +1,6 @@
 import entryController from '../controllers/entries';
 import errorHandler from '../middlewares/errors';
+import auth from '../middlewares/authentication';
 
 
 export default (app) => {
@@ -7,5 +8,5 @@ export default (app) => {
     res.send({ message: 'Welcome to the my-diary Api' });
   });
 
-  app.post('/api/v1/entries', errorHandler.checkNullInput, entryController.addEntry);
+  app.post('/api/v1/entries', auth, errorHandler.checkNullInput, entryController.addEntry);
 };

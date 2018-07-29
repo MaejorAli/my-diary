@@ -4,11 +4,10 @@ import pg from 'pg';
 const connectionString = 'postgres://postgres:ali1702@localhost:5432/my-diary';
 
 const addEntry = (req, res) => {
-  const results = [];
   const currentDate = `${new Date()}`;
   const entry = {
-    title: req.body,
-    content: req.body,
+    title: req.body.title,
+    content: req.body.content,
     createdAt: currentDate.slice(0, 24),
     updatedAt: currentDate.slice(0, 24)
   };
@@ -20,20 +19,17 @@ const addEntry = (req, res) => {
     }
     // SQL Query > Insert Data
     client.query(
-      'INSERT INTO Entries(title, content, createdAt, updatedAt) values($1, $2, $3, $4)',
-      [entry.title, entry.content, entry.createdAt, entry.updatedAt]
+      'INSERT INTO Entries(title, content, users, createdAt, updatedAt) values($1, $2, $3, $4, $5) RETURNING id, title, content, createdAt, updatedAt',
+      [entry.title, entry.content, req.decoded.userId, entry.createdAt, entry.updatedAt],
+      (err, result) => {
+        if (err) {
+          return res.status(500).send({ error: err.message });
+        }
+        const data = result.rows[0];
+        return res.status(200).send({ message: 'Entry successfully created and added!', data });
+      }
+
     );
-    // SQL Query > Select Data
-    const query = client.query('SELECT * FROM items ORDER BY id ASC');
-    // Stream results back one row at a time
-    query.on('row', (row) => {
-      results.push(row);
-    });
-    // After all data is returned, close connection and return results
-    query.on('end', () => {
-      done();
-      return res.json(results);
-    });
   });
 };
 
