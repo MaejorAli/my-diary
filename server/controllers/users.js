@@ -45,6 +45,7 @@ const signup = (req, res) => {
           }
         }
       );
+      console.log(user.id);
       const payload = {
         userId: user.id,
       };
@@ -79,16 +80,20 @@ const signin = (req, res) => {
         'SELECT * FROM Users WHERE email= $1',
         [user.email],
         (error, result) => {
-          if (err) {
+          if (error) {
             return res.status(500).send({ error: error.message });
           }
           const data = result.rows[0];
-          bcrypt.compare(user.password, data.password, (compareError) => {
+          bcrypt.compare(user.password, data.password, (compareError, results) => {
             if (compareError) {
               return res.status(400).send({ error: 'Invalid email or password' });
             }
+            if (!results) {
+              return res.status(400).send({ error: 'Invalid email or password' });
+            }
+            console.log(data.id);
             const payload = {
-              userId: user.id,
+              userId: data.id,
             };
             const token = jwt.sign(payload, secret, {
               expiresIn: '100h', // expires in 1 hours
