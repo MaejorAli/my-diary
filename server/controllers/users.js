@@ -91,7 +91,6 @@ const signin = (req, res) => {
             if (!results) {
               return res.status(400).send({ error: 'Invalid email or password' });
             }
-            console.log(data.id);
             const payload = {
               userId: data.id,
             };
