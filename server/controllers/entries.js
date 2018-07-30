@@ -75,7 +75,7 @@ const getAllEntries = (req, res) => {
     }
 
     client.query(
-      'SELECT * FROM Entries ORDER BY id ASC;',
+      'SELECT * FROM Entries WHERE users=($1) ORDER BY id ASC;', [req.decoded.userId],
       (err, result) => {
         if (err) {
           return res.status(500).send({ error: err.message });
@@ -87,8 +87,33 @@ const getAllEntries = (req, res) => {
   });
 };
 
+const getAnEntry = (req, res) => {
+  const { id } = req.params.entryId;
+  pg.connect(connectionString, (err, client, done) => {
+    // Handle connection errors
+    if (err) {
+      done();
+      return res.status(500).json({ success: false, data: err });
+    }
+    client.query(
+      'SELECT * FROM Entries WHERE users=($1), id=($2) ORDER BY id ASC;', [req.decoded.userId, id],
+      (err, result) => {
+        if (err) {
+          return res.status(500).send({ error: err.message });
+        }
+        if (!result.rows[0]) {
+          return res.status(404).send({ success: false, message: 'Entry not found!' });
+        }
+        const data = result.rows;
+        return res.status(200).send({ success: true, message: 'Entry successfully gotten!', data });
+      }
+    );
+  });
+};
+
 export default {
   addEntry,
   modifyEntry,
-  getAllEntries
+  getAllEntries,
+  getAnEntry
 };
