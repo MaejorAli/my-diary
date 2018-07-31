@@ -8,7 +8,7 @@ dotenv.config();
 const secret = process.env.SECRET;
 
 
-const connectionString = 'postgres://postgres:ali1702@localhost:5432/my-diary';
+const connectionString = 'postgres://postgres:ali1702@127.0.0.1:5432/my-diary';
 
 const signup = (req, res) => {
   const currentDate = `${new Date()}`;
@@ -45,7 +45,6 @@ const signup = (req, res) => {
           }
         }
       );
-      console.log(user.id);
       const payload = {
         userId: user.id,
       };

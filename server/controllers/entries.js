@@ -1,7 +1,7 @@
 import pg from 'pg';
 
 
-const connectionString = 'postgres://postgres:ali1702@localhost:5432/my-diary';
+const connectionString = 'postgres://postgres:ali1702@127.0.0.1:5432/my-diary';
 
 const addEntry = (req, res) => {
   const currentDate = `${new Date()}`;
@@ -71,7 +71,7 @@ const getAllEntries = (req, res) => {
     // Handle connection errors
     if (err) {
       done();
-      return res.status(500).json({ success: false, data: err });
+      return res.status(500).json({ success: false, message: err });
     }
 
     client.query(
@@ -88,15 +88,17 @@ const getAllEntries = (req, res) => {
 };
 
 const getAnEntry = (req, res) => {
-  const { id } = req.params.entryId;
+  const id = req.params.entryId;
   pg.connect(connectionString, (err, client, done) => {
     // Handle connection errors
     if (err) {
       done();
-      return res.status(500).json({ success: false, data: err });
+      return res.status(500).json({ success: false, message: err });
     }
+
     client.query(
-      'SELECT * FROM Entries WHERE users=($1), id=($2) ORDER BY id ASC;', [req.decoded.userId, id],
+      'SELECT * FROM Entries WHERE id=($1) AND users=($2)',
+      [id, req.decoded.userId],
       (err, result) => {
         if (err) {
           return res.status(500).send({ error: err.message });
@@ -104,8 +106,32 @@ const getAnEntry = (req, res) => {
         if (!result.rows[0]) {
           return res.status(404).send({ success: false, message: 'Entry not found!' });
         }
-        const data = result.rows;
+        const data = result.rows[0];
         return res.status(200).send({ success: true, message: 'Entry successfully gotten!', data });
+      }
+    );
+  });
+};
+
+const deleteEntry = (req, res) => {
+  const id = req.params.entryId;
+
+  pg.connect(connectionString, (err, client, done) => {
+    // Handle connection errors
+    if (err) {
+      done();
+      return res.status(500).json({ success: false, data: err });
+    }
+    client.query(
+      'DELETE FROM Entries WHERE id=($1)', [id]
+      , (err, result) => {
+        if (err) {
+          return res.status(404).send({ success: false, message: 'Entry not found!' });
+        }
+        if (result.rowCount <= 0) {
+          return res.status(404).send({ success: false, message: 'Entry not found!' });
+        }
+        return res.status(200).send({ success: true, message: 'Entry successfully deleted' });
       }
     );
   });
@@ -115,5 +141,6 @@ export default {
   addEntry,
   modifyEntry,
   getAllEntries,
-  getAnEntry
+  getAnEntry,
+  deleteEntry
 };
