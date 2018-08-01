@@ -36,7 +36,7 @@ const checkNullInput = (req, res, next) => {
     return res.status(400).send({ error: 'A field does not contain any input' });
   }
   if (!isString) {
-    return res.status(400).send({ error: 'Input text only!' });
+    return res.status(400).send({ error: 'Cannot be numbers only!' });
   }
   return next();
 };
@@ -78,7 +78,7 @@ const checkInvalidModification = (req, res, next) => {
     return res.status(400).send({ error: 'A field does not contain any input' });
   }
   if (!isString) {
-    return res.status(400).send({ error: 'Input text only!' });
+    return res.status(400).send({ error: 'Cannot be numbers only!' });
   }
   return next();
 };

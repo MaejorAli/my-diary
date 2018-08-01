@@ -26,7 +26,7 @@ const addEntry = (req, res) => {
           return res.status(500).send({ error: err.message });
         }
         const data = result.rows[0];
-        return res.status(200).send({ success: true, message: 'Entry successfully created and added!', data });
+        return res.status(201).send({ success: true, message: 'Entry successfully created and added!', data });
       }
 
     );
@@ -60,7 +60,7 @@ const modifyEntry = (req, res) => {
           return res.status(404).send({ success: false, message: 'Entry not found!' });
         }
         const data = result.rows[0];
-        return res.status(200).send({ success: true, message: 'Entry successfully updated!', data });
+        return res.status(201).send({ success: true, message: 'Entry successfully updated!', data });
       }
     );
   });
@@ -120,7 +120,7 @@ const deleteEntry = (req, res) => {
     // Handle connection errors
     if (err) {
       done();
-      return res.status(500).json({ success: false, data: err });
+      return res.status(500).json({ success: false, message: err });
     }
     client.query(
       'DELETE FROM Entries WHERE id=($1)', [id]

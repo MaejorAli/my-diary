@@ -32,21 +32,24 @@ const checkNullInput = (req, res, next) => {
         isString = false;
       }
     }
-    if (!isUndefined) {
-      if (info.trim().length < 1) {
-        isNull = true;
-      }
+
+    if (info.trim().length < 1) {
+      isNull = true;
     }
   });
   if (isUndefined) {
     return res.status(400).send({ error: 'Invalid Input' });
   }
+  if (!validEmail(req.body.email)) {
+    return res.status(400).send({ error: 'Email is not valid!' });
+  }
   if (isNull) {
     return res.status(400).send({ error: 'A field does not contain any input' });
   }
   if (!isString) {
-    return res.status(400).send({ error: 'Input text only!' });
+    return res.status(400).send({ error: 'Input cannot be numbers only!' });
   }
+
   return next();
 };
 
