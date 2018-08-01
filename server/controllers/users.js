@@ -34,31 +34,34 @@ const signup = (req, res) => {
       }
 
       const query = client.query(
-        'INSERT INTO Users(firstname, lastname, password, email, createdAt, updatedAt) values($1, $2, $3, $4, $5, $6)',
+        'INSERT INTO Users(firstname, lastname, password, email, createdAt, updatedAt) values($1, $2, $3, $4, $5, $6) RETURNING firstname, lastname, email, createdAt, updatedAt',
         [user.firstname, user.lastname, password, user.email, user.createdAt, user.updatedAt]
-        , (err) => {
+        , (err, result) => {
           if (err) {
             if (err.code === '23505') {
               return res.status(406).send({ error: 'Another User with this email already exists' });
             }
             return res.status(400).send({ error: err.message });
           }
+
+          const data = result.rows[0];
+          const payload = {
+            userId: data.id,
+          };
+          const token = jwt.sign(payload, secret, {
+            expiresIn: '100h', // expires in 1 hours
+          });
+          query.on('end', () => {
+            res.status(201).send({ message: 'You have successfully signed up', token });
+            done();
+          });
+
+          if (err) {
+            return res.status(500).send({ error: err.message });
+          }
         }
       );
-      const payload = {
-        userId: user.id,
-      };
-      const token = jwt.sign(payload, secret, {
-        expiresIn: '100h', // expires in 1 hours
-      });
-      query.on('end', () => {
-        res.status(200).send({ message: 'You have successfully signed up', token });
-        done();
-      });
     });
-    if (err) {
-      return res.status(500).send({ error: err.message });
-    }
   });
 };
 
@@ -81,6 +84,9 @@ const signin = (req, res) => {
         (error, result) => {
           if (error) {
             return res.status(500).send({ error: error.message });
+          }
+          if (result.rowCount <= 0) {
+            return res.status(400).send({ error: 'Invalid email or password' });
           }
           const data = result.rows[0];
           bcrypt.compare(user.password, data.password, (compareError, results) => {
