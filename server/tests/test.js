@@ -13,7 +13,7 @@ const userDetails = {
   password: 'Testpassword',
 };
 const user = {
-  email: 'alishaibu2002@gmail.com',
+  email: 'alishaibu@2002gmail.com',
   password: 'ali1702',
 };
 describe('test-cases for api routes', () => {
@@ -257,7 +257,7 @@ describe('test-cases for api routes', () => {
                   content: 'It has been almost a century... ',
                 };
                 request(app)
-                  .put('/api/v1/entries/34')
+                  .put('/api/v1/entries/98')
                   .send(entry)
                   .set('x-access-token', tk)
                   .expect('Content-Type', /json/)
@@ -292,7 +292,7 @@ describe('test-cases for api routes', () => {
                       content: '',
                     };
                     request(app)
-                      .put('/api/v1/entries/32')
+                      .put('/api/v1/entries/98')
                       .send(entry)
                       .set('x-access-token', tk)
                       .expect('Content-Type', /json/)
@@ -308,7 +308,7 @@ describe('test-cases for api routes', () => {
                       content: '  ',
                     };
                     request(app)
-                      .put('/api/v1/entries/1')
+                      .put('/api/v1/entries/98')
                       .send(entry)
                       .set('x-access-token', tk)
                       .expect('Content-Type', /json/)
@@ -337,7 +337,7 @@ describe('test-cases for api routes', () => {
                   describe('GET /api/v1/entries/entryId', () => {
                     it('returns with the right response when getting an entry of a specific user', (done) => {
                       request(app)
-                        .get('/api/v1/entries/32')
+                        .get('/api/v1/entries/98')
                         .set('x-access-token', tk)
                         .expect('Content-Type', /json/)
                         .expect(200, done)
