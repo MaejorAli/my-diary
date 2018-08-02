@@ -8,7 +8,7 @@ dotenv.config();
 const secret = process.env.SECRET;
 
 
-const connectionString = process.env.DB_URL;
+const connectionString = 'postgres://postgres:ali1702@127.0.0.1:5432/my-diary';
 
 const signup = (req, res) => {
   const currentDate = `${new Date()}`;
