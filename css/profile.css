@@ -15,9 +15,6 @@ body {
 	cursor: pointer;
     text-decoration: none;
     color: white;
-    
-    
-    
 }
 .menuitem:hover{
 	background-color: transparent;
@@ -101,6 +98,7 @@ footer{
     font-size: 1.53em;
     font-family: "Coda", sans-serif;
     font-weight: bold;
+    padding: 5px
   }
   .user-profile  .bio {
     margin: auto;
@@ -128,39 +126,20 @@ footer{
     border-radius: 18em;
   }
   
-  .user-profile ul.data {
-    margin: 3em auto;
-    height: 2.70em;
-    background: rgb(38, 126, 0);
-    text-align: center;
-    border-radius: 0 0 .3em .3em;
-  }
-  .user-profile li {
-    margin: 0 auto;
-    color: #e3eeee;
-    padding: 0.30em; 
-    width: 30%;
-    display: table-cell;
-    text-align: center;
-  }
   
-  .user-profile span {
-    font-family: "varela round", sans-serif;
-    color: #e3eeee;
-    white-space: nowrap;
-    font-size: 1.27em;
-    font-weight: bold;
-  }
-  .user-profile span:hover {
-    color: #daebea;
-  }
+  
   h2 {
     color: black;
     margin: 0;
     text-align: left;
   }
-  
-  
+  h4 {
+    color: rgb(38, 126, 0);
+  }
+
+  h1{
+    color: grey;
+  }
   
  p {
     color: grey;
@@ -237,3 +216,4 @@ button:active {
  box-shadow: 0 3px #666;
  transform: translateY(4px);
 }
+

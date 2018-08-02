@@ -40,9 +40,8 @@ header {
     color: black;
     margin: 0;
     text-align: left;
+
   }
-  
-  
   
   p {
     color: grey;
@@ -59,7 +58,8 @@ header {
   .entry-img {
     display: inline-block;
     margin-top: 10px;
-  }
+    max-height: 30%;
+    }
   .index:link{
       text-decoration: none;
   }
