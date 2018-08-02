@@ -2,7 +2,7 @@ import dotenv from 'dotenv';
 import express from 'express';
 import logger from 'morgan';
 import bodyParser from 'body-parser';
-import server from './routes/index';
+import entryRoutes from './routes/entries';
 import userRoutes from './routes/users';
 
 dotenv.config();
@@ -17,7 +17,7 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-server(app);
+entryRoutes(app);
 userRoutes(app);
 
 

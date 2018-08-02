@@ -8,7 +8,10 @@
     "start:dev": "nodemon ./server/bin/www --exec babel-node ./server/bin/www",
     "test": "nyc --reporter=html --reporter=text --reporter=lcov mocha --timeout 250000 ./server/tests/test.js --require babel-register",
     "cover": "istanbul cover node_modules/mocha/bin/_mocha -- -R spec",
-    "coveralls": "nyc report --reporter=text-lcov | coveralls"
+    "coveralls": "nyc report --reporter=text-lcov | coveralls",
+    "migrate:users": "node server/models/users.js",
+    "migrate:entries": "node server/models/entries.js",
+    "migrate": "NODE_ENV=development npm run migrate:users && npm run migrate:entries"
   },
   "repository": {
     "type": "git",

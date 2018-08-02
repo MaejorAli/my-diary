@@ -20,4 +20,4 @@ after_script:
 services:
   - postgresql
 addons:
-  postgresql: "9.6"
+  postgresql: "10"
