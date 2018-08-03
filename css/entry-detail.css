@@ -14,12 +14,10 @@ body {
 }
 .menuitem{
 	padding: 10px;
-	cursor: pointer;
+    cursor: pointer;
     text-decoration: none;
-    color: white;
-    
-    
-    
+    color: gray;
+    font-weight: 300;
 }
 .menuitem:hover{
 	background-color: transparent;
@@ -36,7 +34,7 @@ header {
     
     padding: 30px;
     text-align: center;
-    background-color: rgb(38, 126, 0);
+    background-color: #70e5d6;
 }
 p{
     text-align: left;

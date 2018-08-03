@@ -16,10 +16,11 @@ body {
     font-weight: bold;    
 }
 .menuitem{
-	padding: 5px;
-	cursor: pointer;
+	padding: 10px;
+    cursor: pointer;
     text-decoration: none;
-    color: white;
+    color: gray;
+    font-weight: 300;
     
     
     
@@ -33,7 +34,7 @@ header {
     
   padding: 30px;
   text-align: center;
-  background-color: rgb(38, 126, 0);
+  background-color: #70e5d6;
 }
 
   h2 {

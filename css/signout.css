@@ -7,7 +7,7 @@ body, html {
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
     font-size: 15px;
-    color: rgb(38, 126, 0);
+    color: #70e5d6;
     background-attachment: fixed;
     background-position: center; 
     
@@ -27,3 +27,23 @@ div {
     margin-top: -100px;
     margin-left: -200px;
 }
+button {
+    text-align: center;
+    padding: 8px 10px;
+    font-size: 16px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    background-color: #70e5d6;
+    border: none;
+    border-radius: 15px;
+  }
+  
+  button:hover {background-color: #3e8e41}
+  
+  button:active {
+   background-color: #3e8e41;
+   box-shadow: 0 3px #666;
+   transform: translateY(4px);
+  }

@@ -1,6 +1,6 @@
 body {
     font-family: 'Roboto', sans-serif;
-     
+    font-weight: 300; 
 }
 
 
@@ -12,9 +12,10 @@ body {
 }
 .menuitem{
 	padding: 10px;
-	cursor: pointer;
+    cursor: pointer;
     text-decoration: none;
-    color: white;
+    color: gray;
+    font-weight: 300;
 }
 .menuitem:hover{
 	background-color: transparent;
@@ -65,9 +66,9 @@ section:after {
 /* Style the header */
 header {
     
-    padding: 30px;
-    text-align: center;
-    background-color: rgb(38, 126, 0);
+  padding: 30px;
+  text-align: center;
+  background-color: #70e5d6;
 }
 
 footer{
@@ -134,7 +135,7 @@ footer{
     text-align: left;
   }
   h4 {
-    color: rgb(38, 126, 0);
+    color: #70e5d6;
   }
 
   h1{
@@ -180,7 +181,7 @@ footer{
     cursor: pointer;
     outline: none;
     color: #fff;
-    background-color: rgb(38, 126, 0);;
+    background-color: #70e5d6;
     border: none;
     border-radius: 15px;
  }
@@ -188,12 +189,12 @@ footer{
  input[type=submit]:hover {background-color: #3e8e41}
  
  input[type=submit]:active {
-   background-color: #3e8e41;
+   background-color: #70e5d6;
    box-shadow: 0 3px #666;
    transform: translateY(4px);
  }
  input[type=radio]{
-   color: #3e8e41;
+   color: #70e5d6;
  }
 
  button {
@@ -204,7 +205,7 @@ footer{
   cursor: pointer;
   outline: none;
   color: #fff;
-  background-color: rgb(38, 126, 0);;
+  background-color: #70e5d6;
   border: none;
   border-radius: 15px;
 }
