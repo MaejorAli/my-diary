@@ -1,7 +1,7 @@
 body {
     font-family: 'Roboto', sans-serif;
     text-align: center;
-    background:#f1f1f1;
+    background:#f4f4f4;
 }
 
 
@@ -15,7 +15,7 @@ body {
 	padding: 10px;
     cursor: pointer;
     text-decoration: none;
-    color: gray;
+    color: white;
     font-weight: 300;
     
     
@@ -36,7 +36,7 @@ header {
     
     padding: 30px;
     text-align: center;
-    background-color: #70e5d6;
+    background-color: #9099A2;
 }
 textarea{
     font-family: 'Roboto', sans-serif;
@@ -80,7 +80,7 @@ button {
     cursor: pointer;
     outline: none;
     color: #fff;
-    background-color: #70e5d6;
+    background-color: #96858F;
     border: none;
     border-radius: 15px;
  }
@@ -97,8 +97,9 @@ button {
 .image-upload {
     float: left;
     width: 25%;
-    color: grey;
+    color: #96858F;
     padding: 20px;
+    cursor: pointer;
 }
 
 

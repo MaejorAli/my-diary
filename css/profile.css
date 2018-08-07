@@ -1,6 +1,7 @@
 body {
     font-family: 'Roboto', sans-serif;
-    font-weight: 300; 
+    font-weight: 300;
+    
 }
 
 
@@ -14,7 +15,7 @@ body {
 	padding: 10px;
     cursor: pointer;
     text-decoration: none;
-    color: gray;
+    color: white;
     font-weight: 300;
 }
 .menuitem:hover{
@@ -32,7 +33,7 @@ body {
 .part {
   float: left;
   width: 15%;
-  color: grey;
+  color: #96858F;
   padding: 20px;
   margin: 10px;
 }
@@ -68,7 +69,7 @@ header {
     
   padding: 30px;
   text-align: center;
-  background-color: #70e5d6;
+  background-color: #9099A2;
 }
 
 footer{
@@ -135,7 +136,7 @@ footer{
     text-align: left;
   }
   h4 {
-    color: #70e5d6;
+    color: #96858F;
   }
 
   h1{
@@ -181,7 +182,7 @@ footer{
     cursor: pointer;
     outline: none;
     color: #fff;
-    background-color: #70e5d6;
+    background-color: #96858F;
     border: none;
     border-radius: 15px;
  }
@@ -189,12 +190,12 @@ footer{
  input[type=submit]:hover {background-color: #3e8e41}
  
  input[type=submit]:active {
-   background-color: #70e5d6;
+  background-color: #96858F;
    box-shadow: 0 3px #666;
    transform: translateY(4px);
  }
  input[type=radio]{
-   color: #70e5d6;
+   color: #96858F;
  }
 
  button {
@@ -205,7 +206,7 @@ footer{
   cursor: pointer;
   outline: none;
   color: #fff;
-  background-color: #70e5d6;
+  background-color: #96858F;
   border: none;
   border-radius: 15px;
 }
