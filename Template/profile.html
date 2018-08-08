@@ -13,11 +13,11 @@
   <body>
     <div>
   <header>
+    <div>
     <div id="menu">
       <a href="index.html" class="menuitem">Home</a>
       <a href="add-entry.html" class="menuitem">New Entry</a>
-      <a href="modify.html" class="menuitem"> Modify</a>
-      <a href="registration.html" class="menuitem">Sign Out</a>
+      <a href="signout.html" class="menuitem">Sign Out</a>
     </div>
     </header>
 
@@ -31,29 +31,37 @@
           I create applications
           for the web.
       </div>
-      <ul class="data">
-        <li>
-          <span class="entypo-heart">3</span> Stories</li>
-        <li>
-          <span class="entypo-eye">900</span> Followers</li>
-     </ul>
+      
     </div>
     <section>
       <div class= "part">
-      <h3>Reminder Settings</h3>
-      <form>
-        <input type="radio" name="diaryReminder" value="Daily" checked> Daily<br>
-        <input type="radio" name="diaryReminder" value="Weekly"> Weekly<br>
-        <input type="radio" name="diaryReminder" value="Monthly"> Monthly<br><br>
-        <input type="submit">
-      </form> 
+        
       </div>
       
       <article>
-        <h1>Most Read Stories</h1>
+        <h1>My Stories</h1><h4>Published 3</h4>
+        <div class="entry">
+          <div class="entry-img">
+          <a href="entry-detail.html" class= "index"><img src="images/images.jpg" width="250px">
+          </div>
+          <div class="entry-description">
+            <ul>
+              <li>
+                <h2>How living in Paris has increased my hunger for luxury items</h2>
+              </li>
+              <li>
+                <p>The thougth of living in cities like London, Paris, Amsterdam, New York certainly involves.I had been really quiet on social media lately and they assumed I was on vacation. I laughed out loud when I read that because it really couldn’t be the further from the truth.The reason for all of the silence is no new home for Floret</p>
+              </li></a>
+              <li>
+                <p>February 7, 2018</p>
+             </li>
+            </ul>
+          </div>
+          <a href="modify-entry.html"><button type="button">Modify</button></a> <a href="#"><button type="button">Delete</button></a>
+          </div>
         <div class="entry">
             <div class="entry-img">
-             <a href="#" class= "index"><img src="images/images (1).jpg" width="250px">
+             <a href="entry-detail.html" class= "index"><img src="images/images (1).jpg" width="250px">
              </div>
              <div class="entry-description">
                <ul>
@@ -66,9 +74,12 @@
                  <li>
                    <p>March 15, 2018</p>
                 </li>
+                
                </ul>
              </div>
+             <a href="modify-entry.html"><button type="button">Modify</button></a> <a href="#"><button type="button">Delete</button></a>
              </div>
+             
     <div class="entry">
              <div class="entry-img">
              <a href="#" class= "index"><img src="images/images (2).jpg" width="250px">
@@ -84,8 +95,9 @@
                  <li>
                    <p>May 25, 2018</p>
                 </li>
-               </ul>
+                </ul>
              </div>
+             <a href="modify-entry.html"><button type="button">Modify</button></a> <a href="#"><button type="button">Delete</button></a>
              </div>
       </article>
     </section>

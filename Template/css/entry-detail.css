@@ -1,7 +1,7 @@
 body {
     font-family: 'Roboto', sans-serif;
     text-align: center;
-    
+    background: #f4f4f4;
     
 }
 
@@ -14,12 +14,10 @@ body {
 }
 .menuitem{
 	padding: 10px;
-	cursor: pointer;
+    cursor: pointer;
     text-decoration: none;
-    color: rgb(38, 126, 0);
-    
-    
-    
+    color: white;
+    font-weight: 300;
 }
 .menuitem:hover{
 	background-color: transparent;
@@ -36,7 +34,7 @@ header {
     
     padding: 30px;
     text-align: center;
-    
+    background-color: #9099A2;
 }
 p{
     text-align: left;
@@ -51,8 +49,9 @@ h5 {
 h6 {
     float: left;
     width: 25%;
-    color: grey;
+    color: #96858F;
     padding: 20px;
+    cursor: pointer;
 }
 
 
