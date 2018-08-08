@@ -1,0 +1,58 @@
+{
+  "name": "my-diary",
+  "version": "1.0.0",
+  "description": "an online journal where users can pen down their thoughts",
+  "main": "app.js",
+  "scripts": {
+    "start": "babel-node ./server/bin/www",
+    "start:dev": "nodemon ./server/bin/www --exec babel-node ./server/bin/www",
+    "test": "nyc --reporter=html --reporter=text --reporter=lcov mocha --timeout 250000 ./server/tests/test.js --require babel-register --exit",
+    "cover": "istanbul cover node_modules/mocha/bin/_mocha -- -R spec",
+    "coveralls": "nyc report --reporter=text-lcov | coveralls",
+    "migrate:users": "node server/models/users.js",
+    "migrate:entries": "node server/models/entries.js",
+    "migrate": "NODE_ENV=development npm run migrate:users && npm run migrate:entries"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MaejorAli/my-diary.git"
+  },
+  "keywords": [
+    "node",
+    "javascript"
+  ],
+  "author": "Ali Shaibu Salami",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MaejorAli/my-diary/issues"
+  },
+  "homepage": "https://github.com/MaejorAli/my-diary#readme",
+  "dependencies": {
+    "bcrypt": "^3.0.0",
+    "body-parser": "^1.18.3",
+    "chai": "^4.1.2",
+    "chai-http": "^4.0.0",
+    "dotenv": "^6.0.0",
+    "express": "^4.16.3",
+    "jsonwebtoken": "^8.3.0",
+    "mocha": "^5.2.0",
+    "morgan": "^1.9.0",
+    "pg": "^6.1.0",
+    "supertest": "^3.1.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-es2015": "^6.24.1",
+    "chai": "^4.1.2",
+    "chai-http": "^4.0.0",
+    "coveralls": "^3.0.2",
+    "istanbul": "^0.4.5",
+    "mocha": "^5.2.0",
+    "mocha-lcov-reporter": "^1.3.0",
+    "nodemon": "^1.18.1",
+    "nyc": "^12.0.2",
+    "supertest": "^3.1.0"
+  }
+}
