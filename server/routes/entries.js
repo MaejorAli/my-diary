@@ -9,8 +9,8 @@ export default (app) => {
   });
 
   app.post('/api/v1/entries', auth, errorHandler.checkNullInput, entryController.addEntry);
-  app.put('/api/v1/entries/:entryId', errorHandler.checkInvalidModification, entryController.modifyEntry);
+  app.put('/api/v1/entries/:entryId', auth, errorHandler.checkInvalidModification, entryController.modifyEntry);
   app.get('/api/v1/entries', auth, entryController.getAllEntries);
   app.get('/api/v1/entries/:entryId', auth, entryController.getAnEntry);
-  app.delete('/api/v1/entries/:entryId', entryController.deleteEntry);
+  app.delete('/api/v1/entries/:entryId', auth, entryController.deleteEntry);
 };
