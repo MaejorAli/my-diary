@@ -19,5 +19,3 @@ after_script:
   - codeclimate-test-reporter < ./coverage/lcov.info
 services:
   - postgresql
-addons:
-  postgresql: "9.6"
