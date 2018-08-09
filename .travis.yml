@@ -1,5 +1,6 @@
 env: 
   global:
+    - PGPORT=5433
     - CC_TEST_REPORTER_ID: d951d71a92769d9b6b06038e570b774dac180024c3a9a411eb2b3e1f19179d9d
 language: node_js
 node_js:
@@ -21,3 +22,7 @@ services:
   - postgresql
 addons:
   postgresql: "10"
+   apt:
+    packages:
+      - postgresql-10
+      - postgresql-client-10
