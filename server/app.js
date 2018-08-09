@@ -1,9 +1,12 @@
 import dotenv from 'dotenv';
 import express from 'express';
 import logger from 'morgan';
+import swaggerUi from 'swagger-ui-express';
 import bodyParser from 'body-parser';
+import swagDoc from '../swagger.json';
 import entryRoutes from './routes/entries';
 import userRoutes from './routes/users';
+
 
 dotenv.config();
 
@@ -16,6 +19,7 @@ app.use(logger('dev'));
 // Parse incoming requests data (https://github.com/expressjs/body-parser)
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swagDoc));
 
 entryRoutes(app);
 userRoutes(app);
