@@ -1,0 +1,177 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    background:#f4f4f4;
+}
+
+
+#menu{
+    text-align: center;
+    font-weight: bold;
+}
+.menuitem{
+    padding: 10px;
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+    font-weight: 300;   
+}
+.menuitem:hover{
+    background-color: transparent;
+    color: grey;
+    
+}
+* {
+    box-sizing: border-box;
+}
+
+
+/* Style the header */
+header {
+    
+    padding: 30px;
+    text-align: center;
+    background-color: #9099A2;
+}
+textarea{
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    width: 100%;
+    font-weight: 300px;
+    height: 490px;
+    display: block;
+    margin-bottom: 10px;
+    z-index: 1;
+    color: gray;
+    position: relative;
+    padding: 20px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border-radius: 5px;
+    resize: none;
+    border: none;
+    outline: none;
+    animation: fadein 1s 0.5s forwards;
+    opacity: 0 ;
+}
+@keyframes fadein {
+    100% {
+      opacity: 1;
+    }
+  }
+#textareaMsg{
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    width: 100%;
+    height: 50px;
+    display: block;
+    margin-bottom: 10px;
+    z-index: 1;
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    padding: 30px;
+    height: 73px;
+    text-align: center;
+    color: gray;
+    font-weight: 400;
+}
+button {
+    /* text-align: center; */
+    padding: 15px 40px;
+    font-size: 16px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    background-color: #96858F;
+    border: none;
+    border-radius: 30px;
+ }
+ 
+ button:hover {background-color: #3e8e41}
+ 
+ button:active {
+   background-color: #3e8e41;
+   box-shadow: 0 3px #666;
+   transform: translateY(4px);
+ }
+
+/* Create two columns/boxes that floats next to each other */
+.image-upload {
+    float: left;
+    width: 25%;
+    color: #96858F;
+    padding: 20px;
+    cursor: pointer;
+}
+
+
+article {
+    float: left;
+    padding: 20px;
+    width: 50%;   
+}
+
+/* Clear floats after the columns */
+section:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
+/* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
+@media (max-width: 600px) {
+   .image-upload, article {
+        width: 100%;
+        height: auto;
+    }
+}
+
+
+ footer{
+    background-color: #F1F1F1;
+    text-align: center;
+    padding: 10px;
+    text-align: center;
+}
+
+::-webkit-input-placeholder {/* Chrome/Opera/Safari */
+    color: gray;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+}
+::-moz-placeholder{/* Firefox 19+ */
+    color: gray;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+}
+:-ms-input-placeholder { /* IE 10+ */
+    color: gray;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+  }
+:-moz-placeholder { /* Firefox 18- */
+    color: gray;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+  }
+.image-upload > input
+{
+    display: none;
+}
+.img{
+    float: left;
+    opacity: 0.5;
+    
+}
