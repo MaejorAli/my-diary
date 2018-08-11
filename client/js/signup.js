@@ -36,7 +36,7 @@ const signup = (event) => {
     .then(res => res.json())
     .then((result) => {
       if (result.message === 'You have successfully signed up') {
-        window.location.href = '../client/signin.html';
+        window.location.href = '../client/dashboard.html';
       } else {
         throw new Error(result.error);
       }
