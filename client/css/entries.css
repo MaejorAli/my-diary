@@ -1,0 +1,105 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    
+}
+
+
+#menu{
+	text-align: center;
+    font-weight: bold;
+    
+    
+}
+.menuitem{
+	padding: 10px;
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+    font-weight: 300;
+}
+.menuitem:hover{
+	background-color: transparent;
+    color: grey;
+    
+}
+
+/* Style the header */
+header {
+    
+  padding: 30px;
+  text-align: center;
+  background-color: #9099A2;
+}
+
+footer{
+    background-color: #F1F1F1;
+    text-align: center;
+    padding: 10px;
+    text-align: center;
+}
+ h2 {
+    color: black;
+    margin: 0;
+    text-align: left;
+  }
+  h4 {
+    color: #96858F;
+  }
+
+  h1{
+    color: grey;
+    padding-left: 65px
+  }
+  
+ p {
+    color: grey;
+    margin: 0;
+    text-align: left;
+ }
+  
+  .entry {
+    margin: 60px auto;
+    padding: 10px 0px 0px 0px;
+    width: 90%;
+  }
+  
+ 
+  .index:link{
+      text-decoration: none;
+  }
+  .index{
+	color: black;
+    font-family: 'Roboto', sans-serif;
+  }
+  .entry-description {
+    display: inline-block;
+    width: 70%;
+  }
+
+  ul {
+    list-style: none;
+   }
+   button {
+    text-align: center;
+    padding: 4px 6px;
+    font-size: 16px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    background-color: #96858F;
+    border: none;
+    border-radius: 15px;
+  }
+  
+  button:hover {background-color: #9099A2;}
+  
+  button:active {
+   background-color: #9099A2;
+   box-shadow: 0 3px #666;
+   transform: translateY(4px);
+  }
+
+ 
+
