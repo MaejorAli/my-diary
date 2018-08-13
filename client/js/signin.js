@@ -32,11 +32,10 @@ const signin = (event) => {
     .then((result) => {
       if (result.message === 'You have successfully signed in') {
         window.localStorage.setItem('token', JSON.stringify(result.token));
-
-        window.location.href = '../client/entries.html';
       } else {
         throw new Error(result.error);
       }
+      window.location.href = '../client/entries.html';
     })
     .catch((error) => {
       errorField.innerHTML = error;

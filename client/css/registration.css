@@ -9,9 +9,32 @@ body, html {
     font-size: 15px;
     color: #96858F;
     background-attachment: fixed;
-    background-position: center; 
+    background-position: center;  
+    
+
+}
+#menu{
+    text-align: center;
+    font-weight: bold;
+}
+.menuitem{
+    padding: 10px;
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+    font-weight: 300;   
+}
+.menuitem:hover{
+    background-color: transparent;
+    color: grey;
     
 }
+header {
+    
+    padding: 30px;
+    text-align: center;
+    background-color: #9099A2;
+  }
 h1 {
     
     
