@@ -55,7 +55,7 @@ textarea{
     border: none;
     outline: none;
 }
-#inputTitle{
+#title{
     font-weight: bold;
     font-family: 'Roboto', sans-serif;
     font-size: 20px;

@@ -36,7 +36,7 @@ const getAllEntries = () => {
             p = createNode('p'),
             button = createNode('button'),
             buttonText = document.createTextNode('Read More');
-          button.className = 'postBtn';
+          button.id = 'entries';
           h2.innerHTML = `${entry.title}`;
           p.innerHTML = dateType(`${entry.createdat}`);
           append(ul, h2);
@@ -57,3 +57,4 @@ const getAllEntries = () => {
 window.onload = () => {
   getAllEntries();
 };
+
