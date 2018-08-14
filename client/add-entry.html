@@ -32,9 +32,10 @@
     
     <article>
      <form>
-        <input type="title" id="inputTitle" class="form form-control" placeholder="Title">
-        <textarea name="message" placeholder="Write your story..."></textarea>
-        <button type="button">Publish</button>
+        <div id="errors"></div>
+        <input type="title" id="title" class="form form-control" placeholder="Title">
+        <textarea name="message" id= "content" placeholder="Write your story..."></textarea>
+        <button type="button" id="publishEntry">Publish</button>
      </form>
       
     </article>
@@ -46,5 +47,6 @@
      &copy My Diary 2018 
     </div>
   </footer>
+  <script src="js/add-entry.js"></script>
  </body>
 </html>
