@@ -86,3 +86,23 @@ section:after {
     padding: 10px;
     text-align: center;
 }
+button {
+    text-align: center;
+    padding: 4px 6px;
+    font-size: 16px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    background-color: #96858F;
+    border: none;
+    border-radius: 15px;
+  }
+  
+  button:hover {background-color: #9099A2;}
+  
+  button:active {
+   background-color: #9099A2;
+   box-shadow: 0 3px #666;
+   transform: translateY(4px);
+  }
