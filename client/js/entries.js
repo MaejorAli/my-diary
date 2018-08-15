@@ -1,10 +1,17 @@
 const errorField = document.getElementById('errors');
 
+
 const dateType = (date) => {
   const parsedDate = new Date(date);
   const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
   const entryDate = `${months[parsedDate.getMonth()]} ${parsedDate.getDate()}, ${parsedDate.getFullYear()}`;
   return entryDate;
+};
+
+
+const buttonOption = (e) => {
+  const entryId = parseInt(e.target.value, 10);
+  window.location.href = `../client/entry-detail.html?entryId=${entryId}`;
 };
 
 const getAllEntries = () => {
@@ -39,11 +46,13 @@ const getAllEntries = () => {
           button.id = 'entries';
           h2.innerHTML = `${entry.title}`;
           p.innerHTML = dateType(`${entry.createdat}`);
+          button.value = `${entry.id}`;
           append(ul, h2);
           append(ul, p);
           append(ul, button);
           append(button, buttonText);
           append(div, ul);
+          button.addEventListener('click', buttonOption);
         });
       }
       throw new Error(result.error);
@@ -57,4 +66,7 @@ const getAllEntries = () => {
 window.onload = () => {
   getAllEntries();
 };
+/* window.onload = () => {
+  viewEntryDetail();
+}; */
 
