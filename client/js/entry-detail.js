@@ -2,13 +2,25 @@ const dateField = document.getElementById('date');
 const titleField = document.getElementById('title');
 const contentField = document.getElementById('content');
 const errorField = document.getElementById('errors');
-
+const deleteButton = document.getElementById('deleteButton');
+const modifyButton = document.getElementById('modifyButton');
 
 const dateType = (date) => {
   const parsedDate = new Date(date);
   const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
   const entryDate = `${months[parsedDate.getMonth()]} ${parsedDate.getDate()}, ${parsedDate.getFullYear()}`;
   return entryDate;
+};
+
+const buttonOption = (e) => {
+  const entryId = parseInt(e.target.value, 10);
+  if (e.target === modifyButton) {
+    window.location.href = `../client/modify-entry.html?entryId=${entryId}`;
+  }
+
+  //if (e.target === deleteButton) {
+  //  deleteEntry(entryId);
+  //}
 };
 
 const viewEntryDetail = () => {
@@ -31,6 +43,8 @@ const viewEntryDetail = () => {
         dateField.innerHTML = dateType(result.data.createdat);
         titleField.innerHTML = result.data.title;
         contentField.innerHTML = result.data.content;
+        modifyButton.value = entryId;
+        deleteButton.value = entryId;
       } else {
         throw new Error(result.error);
       }
@@ -43,4 +57,6 @@ const viewEntryDetail = () => {
 
 window.onload = () => {
   viewEntryDetail();
+  modifyButton.addEventListener('click', buttonOption);
+  deleteButton.addEventListener('click', buttonOption);
 };
