@@ -110,5 +110,30 @@ const signin = (req, res) => {
   );
 };
 
+const getUserDetails = (req, res) => {
+  pg.connect(connectionString, (err, client, done) => {
+    // Handle connection errors
+    if (err) {
+      done();
+      return res.status(500).json({ success: false, message: err });
+    }
 
-export default { signup, signin };
+    client.query(
+      'SELECT * FROM Users WHERE id=($1)',
+      [req.decoded.userId],
+      (err, result) => {
+        if (err) {
+          return res.status(500).send({ error: err.message });
+        }
+        if (!result.rows[0]) {
+          return res.status(404).send({ success: false, message: 'User not found!' });
+        }
+        const data = result.rows[0];
+        return res.status(200).send({ success: true, message: 'User successfully gotten!', data });
+      }
+    );
+  });
+};
+
+
+export default { signup, signin, getUserDetails, };
