@@ -136,4 +136,6 @@ const getUserDetails = (req, res) => {
 };
 
 
-export default { signup, signin, getUserDetails, };
+export default {
+  signup, signin, getUserDetails,
+};
