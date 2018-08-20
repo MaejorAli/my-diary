@@ -13,7 +13,6 @@
   <body>
     <div>
   <header>
-    <div>
     <div id="menu">
       <a href="entries.html" class="menuitem">Home</a>
       <a href="add-entry.html" class="menuitem">New Entry</a>
@@ -22,84 +21,41 @@
     </header>
 
     <div class="user-profile">
-        <img class="avatar" src="images/ali.jpg" alt="Ali" />
-        <div class="username">Ali Shaibu Salami</div>
-      <div class="bio">
-          Developer
+        <img class="avatar" src="images/profilephoto.png" alt="Ali" />
+        <div class="username" id="username"></div>
+      <div class="email" id="email">
+          
       </div>
-        <div class="description">
-          I create applications
-          for the web.
+      <h4>Published Stories <span id="entryCount"> </span></h4>
       </div>
-      
-    </div>
     <section>
       <div class= "part">
-        
+        <div class="image-upload">
+          <label for="file-input">
+            <h5>Change Profile Picture</h5>
+          </label>
+         <input id="file-input" type="file"/>
       </div>
-      
+         </div>
+      <div id="errors"></div>
       <article>
-        <h1>My Stories</h1><h4>Published 3</h4>
+        <h1>My Top Stories</h1>
         <div class="entry">
-          <div class="entry-img">
-          <a href="entry-detail.html" class= "index"><img src="images/images.jpg" width="250px">
-          </div>
-          <div class="entry-description">
+          <div class="entry-description" id="topEntries">
             <ul>
               <li>
-                <h2>How living in Paris has increased my hunger for luxury items</h2>
+                <h2></h2>
               </li>
               <li>
-                <p>The thougth of living in cities like London, Paris, Amsterdam, New York certainly involves.I had been really quiet on social media lately and they assumed I was on vacation. I laughed out loud when I read that because it really couldn’t be the further from the truth.The reason for all of the silence is no new home for Floret</p>
-              </li></a>
+                <p></p>
+              </li>
               <li>
-                <p>February 7, 2018</p>
+                <p></p>
              </li>
             </ul>
           </div>
-          <a href="modify-entry.html"><button type="button">Modify</button></a> <a href="#"><button type="button">Delete</button></a>
           </div>
-        <div class="entry">
-            <div class="entry-img">
-             <a href="entry-detail.html" class= "index"><img src="images/images (1).jpg" width="250px">
-             </div>
-             <div class="entry-description">
-               <ul>
-                 <li>
-                 <h2>Turning to Agriculture! I just bought a farm</h2>
-                 </li>
-                 <li>
-                   <p>I posted a picture on Instagram the other day and someone commented that I had been really quiet on social media lately and they assumed I was on vacation. I laughed out loud when I read that because it really couldn’t be the further from the truth.The reason for all of the silence is not because we’ve been away, but because we’ve been deep in the throes of buying a farm, and a new home for Floret.</p>
-                 </li></a>
-                 <li>
-                   <p>March 15, 2018</p>
-                </li>
-                
-               </ul>
-             </div>
-             <a href="modify-entry.html"><button type="button">Modify</button></a> <a href="#"><button type="button">Delete</button></a>
-             </div>
-             
-    <div class="entry">
-             <div class="entry-img">
-             <a href="#" class= "index"><img src="images/images (2).jpg" width="250px">
-             </div>
-             <div class="entry-description">
-               <ul>
-                 <li>
-                   <h2>Trying to understand how the human mind works</h2>
-                 </li>
-                 <li>
-                   <p>Your brain contains around 100 billion nerve cells, or neurons, that make up your central nervous system. These neurons transmit and receive electrochemical signals, which are basically your thoughts, emotions, actions and the automatic functions of your body.</p>
-                 </li></a>
-                 <li>
-                   <p>May 25, 2018</p>
-                </li>
-                </ul>
-             </div>
-             <a href="modify-entry.html"><button type="button">Modify</button></a> <a href="#"><button type="button">Delete</button></a>
-             </div>
-      </article>
+       </article>
     </section>
   </div>  
     
@@ -110,5 +66,6 @@
      &copy My Diary 2018 
     </div>
   </footer>
+  <script src="js/profile.js"></script>
  </body>
 </html>

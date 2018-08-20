@@ -9,7 +9,6 @@ body {
 	text-align: center;
     font-weight: bold;
     
-    
 }
 .menuitem{
 	padding: 10px;
@@ -32,7 +31,7 @@ body {
 /* Create two columns/boxes that floats next to each other */
 .part {
   float: left;
-  width: 10%;
+  width: 15%;
   color: #96858F;
   padding: 20px;
   margin: 10px;
@@ -100,9 +99,9 @@ footer{
     font-size: 1.53em;
     font-family: "Coda", sans-serif;
     font-weight: bold;
-    padding: 5px
+    padding: 10px
   }
-  .user-profile  .bio {
+  .user-profile  .email {
     margin: auto;
     display: inline-block;
     margin-left: 10.43em;
@@ -110,33 +109,30 @@ footer{
     font-size: .87em;
     font-family: "varela round", sans-serif;
   }
-  .user-profile > .description {
+  .user-profile > img.avatar {
+    padding: 1em;
+    margin-left: .3em;
+    margin-top: .3em;
+    height: 10em;
+    width: 10em;
+    border-radius: 18em;
+  }
+  .user-profile > h4 {
     margin: auto;
     margin-top: 1.35em;
     margin-right: 4.43em;
     width: 14em;
-    color: #c0c5c5; 
+    color: #96858F;
     font-size: .87em;
     font-family: "varela round", sans-serif;
   }
-  .user-profile > img.avatar {
-    padding: .7em;
-    margin-left: .3em;
-    margin-top: .3em;
-    height: 6.23em;
-    width: 6.23em;
-    border-radius: 18em;
-  }
   
   
   
-  h2 {
+h2 {
     color: black;
     margin: 0;
     text-align: left;
-  }
-  h4 {
-    color: #96858F;
   }
 
   h1{
@@ -147,6 +143,7 @@ footer{
     color: grey;
     margin: 0;
     text-align: left;
+
  }
   
   .entry {
@@ -218,4 +215,7 @@ button:active {
  box-shadow: 0 3px #666;
  transform: translateY(4px);
 }
-
+.image-upload > input
+{
+    display: none;
+}  

@@ -1,5 +1,7 @@
 const errorField = document.getElementById('errors');
-
+const nameField = document.getElementById('username');
+const emailField = document.getElementById('email');
+const spanField = document.getElementById('entryCount');
 
 const dateType = (date) => {
   const parsedDate = new Date(date);
@@ -8,18 +10,76 @@ const dateType = (date) => {
   return entryDate;
 };
 
-
 const buttonOption = (e) => {
   const entryId = parseInt(e.target.value, 10);
   window.location.href = `../client/entry-detail.html?entryId=${entryId}`;
 };
 
-const getAllEntries = () => {
+
+const getUserDetails = () => {
+  const url = 'http://127.0.0.1:5000/api/v1/auth/user';
+  const userToken = JSON.parse(window.localStorage.getItem('token'));
+
+  const fetchData = {
+    method: 'GET',
+    headers: {
+      Accept: 'application/json, text/plain,  */*',
+      'Content-type': 'application/json',
+      'x-access-token': `${userToken}`,
+    },
+  };
+
+  fetch(url, fetchData)
+    .then(res => res.json())
+    .then((result) => {
+      if (result.message === 'User successfully gotten!') {
+        const user = result.data;
+        nameField.innerHTML = `${user.firstname} ${user.lastname}`;
+        emailField.innerHTML = user.email;
+      } else {
+        throw new Error(result.error);
+      }
+    })
+    .catch((error) => {
+      errorField.innerHTML = error;
+    });
+};
+
+
+const getEntryCount = () => {
+  const url = 'http://127.0.0.1:5000/api/v1/entries';
+  const userToken = JSON.parse(window.localStorage.getItem('token'));
+
+  const fetchData = {
+    method: 'GET',
+    headers: {
+      Accept: 'application/json, text/plain,  */*',
+      'Content-type': 'application/json',
+      'x-access-token': `${userToken}`,
+    },
+  };
+
+  fetch(url, fetchData)
+    .then(res => res.json())
+    .then((result) => {
+      if (result.message === 'Entries successfully gotten!') {
+        const user = result.data;
+        spanField.innerHTML = user.length;
+      } else {
+        throw new Error(result.error);
+      }
+    })
+    .catch((error) => {
+      errorField.innerHTML = error;
+    });
+};
+
+const getTOpTwoEntries = () => {
   const createNode = element => document.createElement(element);
 
   const append = (parent, el) => parent.appendChild(el);
 
-  const div = document.getElementById('entries');
+  const div = document.getElementById('topEntries');
 
   const url = 'http://127.0.0.1:5000/api/v1/entries';
   const userToken = JSON.parse(window.localStorage.getItem('token'));
@@ -36,7 +96,7 @@ const getAllEntries = () => {
     .then(res => res.json())
     .then((result) => {
       if (result.message === 'Entries successfully gotten!') {
-        const entries = result.data;
+        const entries = result.data.slice(0, 3);
         return entries.map((entry) => {
           const ul = createNode('ul'),
             h2 = createNode('h2'),
@@ -62,8 +122,8 @@ const getAllEntries = () => {
     });
 };
 
-
 window.onload = () => {
-  getAllEntries();
+  getUserDetails();
+  getEntryCount();
+  getTOpTwoEntries();
 };
-

@@ -2,7 +2,7 @@ body, html {
     height: 100%;
     width: 100%;
     background-repeat: no-repeat;
-    background-image: url('../images/journ.jpg');
+    background-image: url('../images/diary.jpg');
 	background-size: cover;
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
@@ -12,38 +12,61 @@ body, html {
     background-position: center; 
     
 }
-h1 {
-    text-shadow: 1px 1px 2px black, 0 0 25px whitesmoke, 0 0 10px white;
-    text-align: center;
-}
-div {
+
+.center {
     height: 200px;
     width: 400px;
     background: transparent;
-
+    color: white;
     position: fixed;
     top: 50%;
     left: 50%;
     margin-top: -100px;
     margin-left: -200px;
-}
-button {
+    text-shadow: 1px 1px 2px black, 0 0 25px whitesmoke, 0 0 10px white;
     text-align: center;
-    padding: 8px 10px;
+}
+#menu{
+	text-align: center;
+    font-weight: bold;
+    
+}
+.menuitem{
+	padding: 10px;
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+    font-weight: 300;
+}
+.menuitem:hover{
+	background-color: transparent;
+    color: grey;
+    
+}
+header {
+    
+    padding: 30px;
+    text-align: center;
+    background-color: #9099A2;
+  }
+
+  button {
+    text-align: center;
+    padding: 4px 6px;
     font-size: 16px;
     text-align: center;
     cursor: pointer;
     outline: none;
     color: #fff;
-    background-color: #70e5d6;
+    background-color: #96858F;
     border: none;
     border-radius: 15px;
   }
   
-  button:hover {background-color: #3e8e41}
+  button:hover {background-color: #9099A2;}
   
   button:active {
-   background-color: #3e8e41;
+   background-color: #9099A2;
    box-shadow: 0 3px #666;
    transform: translateY(4px);
   }

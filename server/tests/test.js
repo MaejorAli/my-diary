@@ -172,7 +172,8 @@ describe('test-cases for api routes', () => {
               .expect('Content-Type', /json/)
               .expect(201, done)
               .expect((res) => {
-                id = res.body.data.id;
+                const entryId = res.body.data.id;
+                id = entryId;
                 const { message } = res.body;
                 const { title } = res.body.data;
                 expect(message).to.equal('Entry successfully created and added!');
