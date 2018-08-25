@@ -135,7 +135,29 @@ const getUserDetails = (req, res) => {
   });
 };
 
+const imageUpload = (req, res) => {
+  const userImage = req.imageData;
+  pg.connect(connectionString, (err, client, done) => {
+    // Handle connection errors
+    if (err) {
+      done();
+      return res.status(500).json({ success: false, message: err });
+    }
+
+    client.query(
+      'UPDATE Users SET userImage=$1 WHERE id=$2 RETURNING userImage',
+      [userImage, req.decoded.userId],
+      (err, result) => {
+        if (err) {
+          return res.status(500).send({ error: err.message });
+        }
+        const data = result.rows[0].userimage.split(',')[0].substring(result.rows[0].userimage.split(',')[0].indexOf(':') + 1);
+        return res.status(200).send({ success: true, message: 'User Image successfully uploaded!', data });
+      }
+    );
+  });
+};
 
 export default {
-  signup, signin, getUserDetails,
+  signup, signin, getUserDetails, imageUpload,
 };
