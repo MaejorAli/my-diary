@@ -2,6 +2,9 @@ const errorField = document.getElementById('errors');
 const nameField = document.getElementById('username');
 const emailField = document.getElementById('email');
 const spanField = document.getElementById('entryCount');
+const enterImage = document.getElementById('image');
+const inputImage = document.getElementById('file-input');
+
 
 const dateType = (date) => {
   const parsedDate = new Date(date);
@@ -34,8 +37,11 @@ const getUserDetails = () => {
     .then((result) => {
       if (result.message === 'User successfully gotten!') {
         const user = result.data;
+        console.log(user);
         nameField.innerHTML = `${user.firstname} ${user.lastname}`;
         emailField.innerHTML = user.email;
+        const profileImage = user.userimage.split(',')[0].substring(user.userimage.split(',')[0].indexOf(':') + 1);
+        enterImage.src = JSON.parse(profileImage);
       } else {
         throw new Error(result.error);
       }
@@ -122,8 +128,44 @@ const getTOpTwoEntries = () => {
     });
 };
 
+
+const setProfileImage = (file) => {
+  const url = 'http://127.0.0.1:5000/api/v1/auth/userimage';
+  const userToken = JSON.parse(window.localStorage.getItem('token'));
+
+  const image = new FormData();
+  image.append('image', file);
+
+
+  const fetchData = {
+    method: 'PUT',
+    body: image,
+    headers: {
+      'x-access-token': `${userToken}`,
+    },
+  };
+  fetch(url, fetchData)
+    .then(res => res.json())
+    .then((result) => {
+      if (result.message === 'User Image successfully uploaded!') {
+        enterImage.src = JSON.parse(result.data);
+      } else {
+        throw new Error(result.error);
+      }
+    })
+    .catch((error) => {
+      errorField.innerHTML = error;
+    });
+};
+
+inputImage.addEventListener('change', (e) => {
+  const file = e.target.files[0];
+  setProfileImage(file);
+});
+
 window.onload = () => {
   getUserDetails();
   getEntryCount();
   getTOpTwoEntries();
 };
+

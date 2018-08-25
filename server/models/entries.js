@@ -1,9 +1,7 @@
-import dotenv from 'dotenv';
-
 const pg = require('pg');
 
-dotenv.config();
-const connectionString = process.env.DATABASE_URL;
+
+const connectionString = 'postgres://postgres:ali1702@127.0.0.1:5432/my-diary';
 
 const client = new pg.Client(connectionString);
 client.connect();
