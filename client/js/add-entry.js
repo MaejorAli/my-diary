@@ -2,6 +2,16 @@ const titleField = document.getElementById('title');
 const contentField = document.getElementById('content');
 const errorField = document.getElementById('errors');
 const publishEntry = document.getElementById('publishEntry');
+const date = document.getElementById('date');
+
+
+const dateType = (time) => {
+  const parsedDate = new Date(time);
+  const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+  const entryDate = `${months[parsedDate.getMonth()]} ${parsedDate.getDate()}, ${parsedDate.getFullYear()}`;
+  return entryDate;
+};
+
 
 const addEntry = (event) => {
   event.preventDefault();
@@ -10,6 +20,7 @@ const addEntry = (event) => {
   const userToken = JSON.parse(window.localStorage.getItem('token'));
   const title = titleField.value.trim();
   const content = contentField.value.trim();
+
 
   const AddEntryBody = {
     title,
@@ -44,4 +55,5 @@ window.onload = () => {
   if (publishEntry !== null) {
     publishEntry.addEventListener('click', addEntry);
   }
+  date.innerHTML = dateType(new Date());
 };

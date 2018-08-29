@@ -34,7 +34,7 @@ const signup = (req, res) => {
       }
 
       const query = client.query(
-        'INSERT INTO Users(firstname, lastname, password, email, createdAt, updatedAt) values($1, $2, $3, $4, $5, $6) RETURNING firstname, lastname, email, createdAt, updatedAt',
+        'INSERT INTO Users(firstname, lastname, password, email, createdAt, updatedAt) values($1, $2, $3, $4, $5, $6) RETURNING id, firstname, lastname, email, createdAt, updatedAt',
         [user.firstname, user.lastname, password, user.email, user.createdAt, user.updatedAt]
         , (err, result) => {
           if (err) {
@@ -48,6 +48,7 @@ const signup = (req, res) => {
           const payload = {
             userId: data.id,
           };
+
           const token = jwt.sign(payload, secret, {
             expiresIn: '100h', // expires in 1 hours
           });
@@ -136,7 +137,7 @@ const getUserDetails = (req, res) => {
 };
 
 const imageUpload = (req, res) => {
-  const userImage = req.imageData;
+  const userImage = req.imageData.userImage;
   pg.connect(connectionString, (err, client, done) => {
     // Handle connection errors
     if (err) {
@@ -151,7 +152,7 @@ const imageUpload = (req, res) => {
         if (err) {
           return res.status(500).send({ error: err.message });
         }
-        const data = result.rows[0].userimage.split(',')[0].substring(result.rows[0].userimage.split(',')[0].indexOf(':') + 1);
+        const data = result.rows[0];
         return res.status(200).send({ success: true, message: 'User Image successfully uploaded!', data });
       }
     );

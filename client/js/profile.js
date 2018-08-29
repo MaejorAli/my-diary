@@ -35,15 +35,15 @@ const getUserDetails = () => {
   fetch(url, fetchData)
     .then(res => res.json())
     .then((result) => {
+      const user = result.data;
       if (result.message === 'User successfully gotten!') {
-        const user = result.data;
-        console.log(user);
         nameField.innerHTML = `${user.firstname} ${user.lastname}`;
         emailField.innerHTML = user.email;
-        const profileImage = user.userimage.split(',')[0].substring(user.userimage.split(',')[0].indexOf(':') + 1);
-        enterImage.src = JSON.parse(profileImage);
+      }
+      if (user.userimage === null) {
+        enterImage.src = 'images/profilephoto.png';
       } else {
-        throw new Error(result.error);
+        enterImage.src = user.userimage;
       }
     })
     .catch((error) => {
@@ -148,7 +148,7 @@ const setProfileImage = (file) => {
     .then(res => res.json())
     .then((result) => {
       if (result.message === 'User Image successfully uploaded!') {
-        enterImage.src = JSON.parse(result.data);
+        enterImage.src = result.data.userimage;
       } else {
         throw new Error(result.error);
       }

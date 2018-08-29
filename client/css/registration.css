@@ -200,16 +200,6 @@ header {
     background-color: #96858F;
 }
 
-.forgot-password {
-    color: rgb(104, 145, 162);
-}
-
-.forgot-password:hover,
-.forgot-password:active,
-.forgot-password:focus{
-    color: #96858F;
-}
-
 #errors{
     color: red;
 }

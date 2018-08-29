@@ -106,3 +106,6 @@ button {
    box-shadow: 0 3px #666;
    transform: translateY(4px);
   }
+#errors{
+    color: red;
+}
