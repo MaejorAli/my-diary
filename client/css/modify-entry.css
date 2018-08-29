@@ -103,7 +103,7 @@ button {
  }
 
 /* Create two columns/boxes that floats next to each other */
-.image-upload {
+.date {
     float: left;
     width: 25%;
     color: #96858F;
@@ -128,7 +128,7 @@ section:after {
 
 /* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
 @media (max-width: 600px) {
-   .image-upload, article {
+   .date, article {
         width: 100%;
         height: auto;
     }
@@ -170,8 +170,6 @@ section:after {
 {
     display: none;
 }
-.img{
-    float: left;
-    opacity: 0.5;
-    
+#errors{
+    color: red;
 }

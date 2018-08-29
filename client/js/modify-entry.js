@@ -2,8 +2,16 @@ const titleField = document.getElementById('title');
 const contentField = document.getElementById('content');
 const errorField = document.getElementById('errors');
 const publishEntry = document.getElementById('publishEntry');
+const date = document.getElementById('date');
 
 const entryId = location.search.substring(1).split('=')[1];
+
+const dateType = (time) => {
+  const parsedDate = new Date(time);
+  const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+  const entryDate = `${months[parsedDate.getMonth()]} ${parsedDate.getDate()}, ${parsedDate.getFullYear()}`;
+  return entryDate;
+};
 
 const fillFieldsToEdit = () => {
   const url = `http://127.0.0.1:5000/api/v1/entries/${entryId}`;
@@ -70,6 +78,7 @@ const saveEditedContent = (event) => {
 
 window.onload = () => {
   fillFieldsToEdit();
+  date.innerHTML = dateType(new Date());
 };
 
 if (publishEntry !== null) {
