@@ -20,7 +20,7 @@ const buttonOption = (e) => {
 
 
 const getUserDetails = () => {
-  const url = 'http://127.0.0.1:5000/api/v1/auth/user';
+  const url = 'https://secure-shelf-65268.herokuapp.com/api/v1/auth/user';
   const userToken = JSON.parse(window.localStorage.getItem('token'));
 
   const fetchData = {
@@ -53,7 +53,7 @@ const getUserDetails = () => {
 
 
 const getEntryCount = () => {
-  const url = 'http://127.0.0.1:5000/api/v1/entries';
+  const url = 'https://secure-shelf-65268.herokuapp.com/api/v1/entries';
   const userToken = JSON.parse(window.localStorage.getItem('token'));
 
   const fetchData = {
@@ -87,7 +87,7 @@ const getTOpTwoEntries = () => {
 
   const div = document.getElementById('topEntries');
 
-  const url = 'http://127.0.0.1:5000/api/v1/entries';
+  const url = 'https://secure-shelf-65268.herokuapp.com/api/v1/entries';
   const userToken = JSON.parse(window.localStorage.getItem('token'));
   const fetchData = {
     method: 'GET',
@@ -130,7 +130,7 @@ const getTOpTwoEntries = () => {
 
 
 const setProfileImage = (file) => {
-  const url = 'http://127.0.0.1:5000/api/v1/auth/userimage';
+  const url = 'https://secure-shelf-65268.herokuapp.com/api/v1/auth/userimage';
   const userToken = JSON.parse(window.localStorage.getItem('token'));
 
   const image = new FormData();

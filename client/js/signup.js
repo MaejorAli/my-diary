@@ -9,7 +9,7 @@ const errorField = document.getElementById('errors');
 const signup = (event) => {
   event.preventDefault();
 
-  const url = 'http://127.0.0.1:5000/api/v1/auth/signup';
+  const url = 'https://secure-shelf-65268.herokuapp.com/api/v1/auth/signup';
   const email = emailField.value.trim();
   const password = passwordField.value.trim();
   const firstname = firstnameField.value.trim();

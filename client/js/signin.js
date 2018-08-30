@@ -9,7 +9,7 @@ const userToken = '';
 const signin = (event) => {
   event.preventDefault();
 
-  const url = 'http://127.0.0.1:5000/api/v1/auth/login';
+  const url = 'https://secure-shelf-65268.herokuapp.com/api/v1/auth/login';
   const email = emailField.value.trim();
   const password = passwordField.value.trim();
 

@@ -16,7 +16,7 @@ const dateType = (time) => {
 const addEntry = (event) => {
   event.preventDefault();
 
-  const url = 'http://127.0.0.1:5000/api/v1/entries';
+  const url = 'https://secure-shelf-65268.herokuapp.com/api/v1/entries';
   const userToken = JSON.parse(window.localStorage.getItem('token'));
   const title = titleField.value.trim();
   const content = contentField.value.trim();

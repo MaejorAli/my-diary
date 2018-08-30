@@ -14,7 +14,7 @@ const dateType = (time) => {
 };
 
 const fillFieldsToEdit = () => {
-  const url = `http://127.0.0.1:5000/api/v1/entries/${entryId}`;
+  const url = `https://secure-shelf-65268.herokuapp.com/api/v1/entries/${entryId}`;
   const userToken = JSON.parse(window.localStorage.getItem('token'));
   const fetchData = {
     method: 'GET',
@@ -42,7 +42,7 @@ const fillFieldsToEdit = () => {
 const saveEditedContent = (event) => {
   event.preventDefault();
 
-  const url = `http://127.0.0.1:5000/api/v1/entries/${entryId}`;
+  const url = `https://secure-shelf-65268.herokuapp.com/api/v1/entries/${entryId}`;
   const userToken = JSON.parse(window.localStorage.getItem('token'));
 
   const title = titleField.value.trim();
