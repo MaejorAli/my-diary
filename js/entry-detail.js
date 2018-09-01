@@ -29,7 +29,7 @@ const deleteEntry = (entryId) => {
     .then(res => res.json())
     .then((result) => {
       if (result.message === 'Entry successfully deleted') {
-        window.location.href = '../client/entries.html';
+        window.location.href = '../entries.html';
       } else {
         throw new Error(result.error);
       }
@@ -42,7 +42,7 @@ const deleteEntry = (entryId) => {
 const buttonOption = (e) => {
   const entryId = parseInt(e.target.value, 10);
   if (e.target === modifyButton) {
-    window.location.href = `../client/modify-entry.html?entryId=${entryId}`;
+    window.location.href = `../modify-entry.html?entryId=${entryId}`;
   }
 
   if (e.target === deleteButton) {

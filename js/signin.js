@@ -35,7 +35,7 @@ const signin = (event) => {
       } else {
         throw new Error(result.error);
       }
-      window.location.href = '../client/entries.html';
+      window.location.href = '../entries.html';
     })
     .catch((error) => {
       errorField.innerHTML = error;

@@ -15,7 +15,7 @@ const dateType = (date) => {
 
 const buttonOption = (e) => {
   const entryId = parseInt(e.target.value, 10);
-  window.location.href = `../client/entry-detail.html?entryId=${entryId}`;
+  window.location.href = `../entry-detail.html?entryId=${entryId}`;
 };
 
 
