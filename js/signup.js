@@ -37,7 +37,7 @@ const signup = (event) => {
     .then((result) => {
       if (result.message === 'You have successfully signed up') {
         window.localStorage.setItem('token', JSON.stringify(result.token));
-        window.location.href = '../dashboard.html';
+        window.location.href = 'dashboard.html';
       } else {
         throw new Error(result.error);
       }
