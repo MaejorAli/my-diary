@@ -40,7 +40,7 @@ const addEntry = (event) => {
     .then(res => res.json())
     .then((result) => {
       if (result.message === 'Entry successfully created and added!') {
-        window.location.href = '../entries.html';
+        window.location.href = './entries.html';
       } else {
         throw new Error(result.error);
       }

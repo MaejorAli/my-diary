@@ -65,7 +65,7 @@ const saveEditedContent = (event) => {
     .then(res => res.json())
     .then((result) => {
       if (result.message === 'Entry successfully updated!') {
-        window.location.href = '../entries.html';
+        window.location.href = './entries.html';
       } else {
         throw new Error(result.error);
       }
