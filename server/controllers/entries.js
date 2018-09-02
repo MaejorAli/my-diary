@@ -27,6 +27,7 @@ const addEntry = (req, res) => {
           return res.status(500).send({ error: err.message });
         }
         const data = result.rows[0];
+        done();
         return res.status(201).send({ success: true, message: 'Entry successfully created and added!', data });
       }
 
@@ -61,6 +62,7 @@ const modifyEntry = (req, res) => {
           return res.status(404).send({ success: false, message: 'Entry not found!' });
         }
         const data = result.rows[0];
+        done();
         return res.status(201).send({ success: true, message: 'Entry successfully updated!', data });
       }
     );
@@ -82,6 +84,7 @@ const getAllEntries = (req, res) => {
           return res.status(500).send({ error: err.message });
         }
         const data = result.rows;
+        done();
         return res.status(200).send({ success: true, message: 'Entries successfully gotten!', data });
       }
     );
@@ -108,6 +111,7 @@ const getAnEntry = (req, res) => {
           return res.status(404).send({ success: false, message: 'Entry not found!' });
         }
         const data = result.rows[0];
+        done();
         return res.status(200).send({ success: true, message: 'Entry successfully gotten!', data });
       }
     );
@@ -132,6 +136,7 @@ const deleteEntry = (req, res) => {
         if (result.rowCount <= 0) {
           return res.status(404).send({ success: false, message: 'Entry not found!' });
         }
+        done();
         return res.status(200).send({ success: true, message: 'Entry successfully deleted' });
       }
     );

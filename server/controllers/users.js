@@ -103,6 +103,7 @@ const signin = (req, res) => {
             const token = jwt.sign(payload, secret, {
               expiresIn: '100h', // expires in 1 hours
             });
+            done();
             return res.status(200).send({ message: 'You have successfully signed in', token });
           });
         },
@@ -130,6 +131,7 @@ const getUserDetails = (req, res) => {
           return res.status(404).send({ success: false, message: 'User not found!' });
         }
         const data = result.rows[0];
+        done();
         return res.status(200).send({ success: true, message: 'User successfully gotten!', data });
       }
     );
@@ -153,6 +155,7 @@ const imageUpload = (req, res) => {
           return res.status(500).send({ error: err.message });
         }
         const data = result.rows[0];
+        done();
         return res.status(200).send({ success: true, message: 'User Image successfully uploaded!', data });
       }
     );
