@@ -372,6 +372,43 @@ describe('test-cases for api routes', () => {
                             expect(message).to.equal('Entry not found!');
                           });
                       });
+                      describe('GET /api/v1/auth/user', () => {
+                        it('returns with the right response when getting the details of a user', (done) => {
+                          request(app)
+                            .get('/api/v1/auth/user')
+                            .set('x-access-token', tk)
+                            .expect('Content-Type', /json/)
+                            .expect(200, done)
+                            .expect((res) => {
+                              const { message } = res.body;
+                              expect(message).to.equal('User successfully gotten!');
+                            });
+                        });
+                      });
+                      describe('DELETE /api/v1/entries/entryId', () => {
+                        it('returns with the right response when deleting an entry', (done) => {
+                          request(app)
+                            .delete(`/api/v1/entries/${id}`)
+                            .set('x-access-token', tk)
+                            .expect('Content-Type', /json/)
+                            .expect(200, done)
+                            .expect((res) => {
+                              const { message } = res.body;
+                              expect(message).to.equal('Entry successfully deleted');
+                            });
+                        });
+                        it('returns with the right response when entry to be deleted is not found', (done) => {
+                          request(app)
+                            .delete('/api/v1/entries/10')
+                            .set('x-access-token', tk)
+                            .expect('Content-Type', /json/)
+                            .expect(404, done)
+                            .expect((res) => {
+                              const { message } = res.body;
+                              expect(message).to.equal('Entry not found!');
+                            });
+                        });
+                      });
                     });
                   });
                 });
@@ -383,4 +420,3 @@ describe('test-cases for api routes', () => {
     });
   });
 });
-
