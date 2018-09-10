@@ -1,7 +1,7 @@
 const pg = require('pg');
 
 
-const connectionString = 'postgres://postgres:ali1702@127.0.0.1:5432/my-diary';
+const connectionString = 'postgres://postgres:ali1702@127.0.0.1:5433/my-diary';
 
 const client = new pg.Client(connectionString);
 client.connect();

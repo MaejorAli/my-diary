@@ -35,8 +35,8 @@ const signup = (req, res) => {
 
       const query = client.query(
         'INSERT INTO Users(firstname, lastname, password, email, createdAt, updatedAt) values($1, $2, $3, $4, $5, $6) RETURNING id, firstname, lastname, email, createdAt, updatedAt',
-        [user.firstname, user.lastname, password, user.email, user.createdAt, user.updatedAt]
-        , (err, result) => {
+        [user.firstname, user.lastname, password, user.email, user.createdAt, user.updatedAt],
+        (err, result) => {
           if (err) {
             if (err.code === '23505') {
               return res.status(406).send({ error: 'Another User with this email already exists' });

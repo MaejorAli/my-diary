@@ -8,9 +8,8 @@ body, html {
     font-weight: 300;
     font-size: 15px;
     color: #96858F;
-    background-position: center;  
-    
-
+    background-position: center;
+    margin: 0px;  
 }
 #menu{
     text-align: center;
